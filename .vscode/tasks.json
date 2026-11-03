@@ -1,0 +1,16 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Run adversarial recommender profiles",
+			"type": "shell",
+			"command": "python3",
+			"args": [
+				"-c",
+				"from src.recommender import load_songs, recommend_songs\nsongs = load_songs('data/songs.csv')\nprofiles = {\n    'Conflicting signals': {'genre': 'rock', 'mood': 'chill', 'energy': 0.95, 'likes_acoustic': True},\n    'High-energy melancholy': {'mood': 'melancholic', 'energy': 0.95, 'likes_acoustic': False},\n    'Acoustic contradiction': {'genre': 'pop', 'mood': 'intense', 'energy': 0.9, 'likes_acoustic': True},\n    'Unknown labels': {'genre': 'not-in-catalog', 'mood': 'not-in-catalog', 'energy': 0.5, 'likes_acoustic': False},\n    'Boundary energy 0.0': {'energy': 0.0, 'likes_acoustic': False},\n    'Boundary energy 1.0': {'energy': 1.0, 'likes_acoustic': False},\n    'Out-of-range energy 1.5': {'energy': 1.5},\n    'Out-of-range energy -0.5': {'energy': -0.5},\n    'No preferences': {},\n}\nfor name, profile in profiles.items():\n    print(f'\\\\n{name}: {profile}')\n    for rank, (song, score, explanation) in enumerate(recommend_songs(profile, songs, k=5), 1):\n        print(f'{rank}. {song[\\\"title\\\"]} — {score:.1f} points ({explanation})')\n"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		}
+	]
+}

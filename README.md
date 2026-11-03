@@ -124,6 +124,139 @@ Top recommendations
 
 ```
 
+
+**TESTING FOR 3 DIFFERENT PROFILES**
+```
+Top recommendations for High-Energy Pop
+==================================================
+
+1. Sunrise City
+   Final score: 92.5 points
+   Reasons:
+     - genre match (+20.0)
+     - mood match (+30.0)
+     - energy similarity (+26.1)
+     - acoustic preference (+16.4)
+
+2. Gym Hero
+   Final score: 68.4 points
+   Reasons:
+     - genre match (+20.0)
+     - mood mismatch (+0.0)
+     - energy similarity (+29.4)
+     - acoustic preference (+19.0)
+
+3. Rooftop Lights
+   Final score: 67.3 points
+   Reasons:
+     - genre mismatch (+0.0)
+     - mood match (+30.0)
+     - energy similarity (+24.3)
+     - acoustic preference (+13.0)
+
+4. Iron Horizon
+   Final score: 48.6 points
+   Reasons:
+     - genre mismatch (+0.0)
+     - mood mismatch (+0.0)
+     - energy similarity (+29.4)
+     - acoustic preference (+19.2)
+
+5. Storm Runner
+   Final score: 46.8 points
+   Reasons:
+     - genre mismatch (+0.0)
+     - mood mismatch (+0.0)
+     - energy similarity (+28.8)
+     - acoustic preference (+18.0)
+
+Top recommendations for Chill Lofi
+==================================================
+
+1. Library Rain
+   Final score: 95.7 points
+   Reasons:
+     - genre match (+20.0)
+     - mood match (+30.0)
+     - energy similarity (+28.5)
+     - acoustic preference (+17.2)
+
+2. Midnight Coding
+   Final score: 93.6 points
+   Reasons:
+     - genre match (+20.0)
+     - mood match (+30.0)
+     - energy similarity (+29.4)
+     - acoustic preference (+14.2)
+
+3. Spacewalk Thoughts
+   Final score: 74.8 points
+   Reasons:
+     - genre mismatch (+0.0)
+     - mood match (+30.0)
+     - energy similarity (+26.4)
+     - acoustic preference (+18.4)
+
+4. Focus Flow
+   Final score: 65.6 points
+   Reasons:
+     - genre match (+20.0)
+     - mood mismatch (+0.0)
+     - energy similarity (+30.0)
+     - acoustic preference (+15.6)
+
+5. Coffee Shop Stories
+   Final score: 46.9 points
+   Reasons:
+     - genre mismatch (+0.0)
+     - mood mismatch (+0.0)
+     - energy similarity (+29.1)
+     - acoustic preference (+17.8)
+
+Top recommendations for Deep Intense Rock
+==================================================
+
+1. Storm Runner
+   Final score: 97.7 points
+   Reasons:
+     - genre match (+20.0)
+     - mood match (+30.0)
+     - energy similarity (+29.7)
+     - acoustic preference (+18.0)
+
+2. Gym Hero
+   Final score: 78.1 points
+   Reasons:
+     - genre mismatch (+0.0)
+     - mood match (+30.0)
+     - energy similarity (+29.1)
+     - acoustic preference (+19.0)
+
+3. Afterglow Circuit
+   Final score: 47.5 points
+   Reasons:
+     - genre mismatch (+0.0)
+     - mood mismatch (+0.0)
+     - energy similarity (+29.1)
+     - acoustic preference (+18.4)
+
+4. Iron Horizon
+   Final score: 47.1 points
+   Reasons:
+     - genre mismatch (+0.0)
+     - mood mismatch (+0.0)
+     - energy similarity (+27.9)
+     - acoustic preference (+19.2)
+
+5. Sunrise City
+   Final score: 44.0 points
+   Reasons:
+     - genre mismatch (+0.0)
+     - mood mismatch (+0.0)
+     - energy similarity (+27.6)
+     - acoustic preference (+16.4)
+```
+
 **Screenshot or video** *(optional)*: <!-- Insert a screenshot or demo video link here -->
 
 ---
@@ -149,6 +282,10 @@ Examples:
 - It might over favor one genre or mood
 
 You will go deeper on this in your model card.
+
+
+There are many limitations with this recommender. For example, it doesn't have a vast variety of songs, just a limited dataset. A major limitation I can think of is that sometimes the song's energy doesn't match the mood. For example, angry rock songs can be high in energy but the recommender might think that this energy level matches the profile of a user who likes "happy pop." I can think of songwriters who will also write songs that sound upbeat and happy but are actually sad or distressing. 
+Another limitation is that the user's profile right now is static. The user is described very one-dimensionally, such as "happy pop." But people's moods shift throughout the day and across periods of time; the recommender at the moment does not adjust the user's profile based on what they have actually been feeling and listening to lately. 
 
 ---
 

@@ -3,7 +3,10 @@
 ## 1. Model Name  
 
 Give your model a short, descriptive name.  
-Example: **VibeFinder 1.0**  
+Example: **VibeFinder 1.0**
+
+**Music to my Mood**
+
 
 ---
 
@@ -17,6 +20,10 @@ Prompts:
 - What assumptions does it make about the user  
 - Is this for real users or classroom exploration  
 
+
+This recommender is designed to create a short playlist of songs that match your mood. Based on the user's music taste preferences, this simulator determines which songs the user is most likely to enjoy at the moment. The recommender will take the user's preferred genre, mood, energy level, and favorability towards acousticness -- using these factors, it calculates how similar a song is to the user preference levels of the factors. If the song's attributes align well with the user's taste, it recommends that song to the user. 
+
+Right now, this recommender is for classroom exploration only. The current program does not take actual user data or user interactions to create a list of recommendations. It only has 18 songs in its catalog and the user preferences are predetermined based on a few factors only. 
 ---
 
 ## 3. How the Model Works  
@@ -31,6 +38,10 @@ Prompts:
 - What changes did you make from the starter logic  
 
 Avoid code here. Pretend you are explaining the idea to a friend who does not program.
+
+There are only a few main features that are currently used from a song in order to determine its score. The current model takes in a song's genre, energy, mood, and acousticness data, though each song has additional attributes (id, title, artist, genre, mood, energy, tempo_bpm, valence, danceability, acousticness). 
+The model identifies what the user's preference levels for genre, energy, mood, and acousticness are and compares this data with the song's data in order to determine how similar the two are. The way the program does this is by calculating a score. For example, genre contributes 20 points if the song's genre matches the user's preferred genre-- otherwise, it gives 0 points. Then mood is weighted heavier, contriibuting 30 points if there is an exact match between the song and the user. Factors such as energy and acousticness are measured by a numeric value, rather than a clear category like "pop" or "happy." Therefore, the amount of points each of these factors contribute to the overall score depends on how close the song's value is to the user's value. For example, if a user prefers an energy level of 0.85, a song with an energy level of 0.75 is more likely to be recommended than one with a level of 0.20. 
+
 
 ---
 
@@ -68,7 +79,10 @@ Prompts:
 - Features it does not consider  
 - Genres or moods that are underrepresented  
 - Cases where the system overfits to one preference  
-- Ways the scoring might unintentionally favor some users  
+- Ways the scoring might unintentionally favor some users 
+
+This system does not consider learning from the user after the initial profile is made for them. The recommender selects songs based on the existing user profile but does not consider that the user's tastes might change over time. 
+
 
 ---
 

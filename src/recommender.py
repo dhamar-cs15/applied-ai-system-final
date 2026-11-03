@@ -66,8 +66,8 @@ def score_song(user_prefs: Dict, song: Dict) -> Tuple[float, List[str]]:
     genre = user_prefs.get("genre")
     if genre:
         if str(genre).strip().casefold() == str(song.get("genre", "")).strip().casefold():
-            score += 20
-            reasons.append("genre match (+20.0)")
+            score += 10
+            reasons.append("genre match (+10.0)")
         else:
             reasons.append("genre mismatch (+0.0)")
 
@@ -81,7 +81,7 @@ def score_song(user_prefs: Dict, song: Dict) -> Tuple[float, List[str]]:
 
     if "energy" in user_prefs and "energy" in song:
         energy_points = round(
-            30 * max(
+            60 * max(
                 0.0, 1.0 - abs(float(user_prefs["energy"]) - float(song["energy"]))
             ),
             1,

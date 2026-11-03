@@ -35,11 +35,11 @@ def test_score_song_returns_score_and_reasons():
 
     score, reasons = score_song(user_prefs, song)
 
-    assert score == 74.0
+    assert score == 88.0
     assert reasons == [
-        "genre match (+20.0)",
+        "genre match (+10.0)",
         "mood match (+30.0)",
-        "energy similarity (+24.0)",
+        "energy similarity (+48.0)",
     ]
 
 
