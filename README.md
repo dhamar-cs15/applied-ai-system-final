@@ -29,6 +29,11 @@ Some prompts to answer:
 
 You can include a simple diagram or bullet list if helpful.
 
+Write a short paragraph explaining your understanding of how real-world recommendations work and what your version will prioritize.
+List the specific features your Song and UserProfile objects will use in your simulation.
+
+
+
 ---
 
 ## Getting Started
@@ -77,6 +82,46 @@ Paste a sample of your recommender's output here as a text block so a reader can
 #   1. ...
 #   2. ...
 #   3. ...
+```
+```
+Top recommendations
+========================================
+
+1. Sunrise City
+   Final score: 79.4 points
+   Reasons:
+     - genre match (+20.0)
+     - mood match (+30.0)
+     - energy similarity (+29.4)
+
+2. Rooftop Lights
+   Final score: 58.8 points
+   Reasons:
+     - genre mismatch (+0.0)
+     - mood match (+30.0)
+     - energy similarity (+28.8)
+
+3. Gym Hero
+   Final score: 46.1 points
+   Reasons:
+     - genre match (+20.0)
+     - mood mismatch (+0.0)
+     - energy similarity (+26.1)
+
+4. Gold on the Floor
+   Final score: 29.7 points
+   Reasons:
+     - genre mismatch (+0.0)
+     - mood mismatch (+0.0)
+     - energy similarity (+29.7)
+
+5. Night Drive Loop
+   Final score: 28.5 points
+   Reasons:
+     - genre mismatch (+0.0)
+     - mood mismatch (+0.0)
+     - energy similarity (+28.5)
+
 ```
 
 **Screenshot or video** *(optional)*: <!-- Insert a screenshot or demo video link here -->
