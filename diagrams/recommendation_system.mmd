@@ -1,0 +1,36 @@
+flowchart TD
+    User["User: describes what they want and reviews recommendations"]
+    App["Main application<br/>src/main.py"]
+    Parser["AI preference extractor<br/>planned"]
+    Guardrail["Validate structured preferences<br/>allowed genres/moods; energy 0–1"]
+    Catalog[("Song catalog<br/>data/songs.csv")]
+    Ranker["Retriever and ranker<br/>src/recommender.py"]
+    Candidates["Top-ranked songs<br/>with catalog features"]
+    Composer["Grounded response composer<br/>planned: explain using retrieved songs only"]
+    Result["Recommendations with reasons"]
+    Error["Show validation or AI errors"]
+
+    User -->|"Natural-language request"| App
+    App --> Parser
+    Parser --> Guardrail
+    Guardrail -->|"Valid preferences"| Ranker
+    Guardrail -->|"Invalid preferences"| Error
+    Catalog --> Ranker
+    Ranker --> Candidates
+    Candidates --> Composer
+    Composer --> Result
+    Result --> User
+    Error --> User
+
+    subgraph Checks["Testing and User oversight"]
+        Tests["pytest<br/>preference validation, ranking, and grounding checks"]
+        Review["User checks relevance and reports poor recommendations"]
+    end
+
+    Tests -.->|"automated checks"| Guardrail
+    Tests -.->|"automated checks"| Ranker
+    Tests -.->|"automated checks"| Composer
+    Result -.-> Review
+
+    classDef planned stroke-dasharray: 5 5
+    class Parser,Composer planned

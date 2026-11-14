@@ -1,19 +1,583 @@
 id,title,artist,genre,mood,energy,tempo_bpm,valence,danceability,acousticness
-1,Sunrise City,Neon Echo,pop,happy,0.82,118,0.84,0.79,0.18
-2,Midnight Coding,LoRoom,lofi,chill,0.42,78,0.56,0.62,0.71
-3,Storm Runner,Voltline,rock,intense,0.91,152,0.48,0.66,0.10
-4,Library Rain,Paper Lanterns,lofi,chill,0.35,72,0.60,0.58,0.86
-5,Gym Hero,Max Pulse,pop,intense,0.93,132,0.77,0.88,0.05
-6,Spacewalk Thoughts,Orbit Bloom,ambient,chill,0.28,60,0.65,0.41,0.92
-7,Coffee Shop Stories,Slow Stereo,jazz,relaxed,0.37,90,0.71,0.54,0.89
-8,Night Drive Loop,Neon Echo,synthwave,moody,0.75,110,0.49,0.73,0.22
-9,Focus Flow,LoRoom,lofi,focused,0.40,80,0.59,0.60,0.78
-10,Rooftop Lights,Indigo Parade,indie pop,happy,0.76,124,0.81,0.82,0.35
-11,Backroad Postcard,June Wilder,country,nostalgic,0.58,96,0.67,0.52,0.61
-12,Island Daydream,Marley Finch,reggae,playful,0.68,102,0.86,0.74,0.31
-13,Glass Cathedral,Elian Frost,classical,serene,0.24,66,0.55,0.28,0.94
-14,Iron Horizon,Black Meridian,metal,defiant,0.97,168,0.32,0.59,0.04
-15,Gold on the Floor,Velvet Current,funk,confident,0.79,116,0.88,0.91,0.14
-16,Old Pine Road,The Foxglove Trio,folk,wistful,0.46,84,0.43,0.47,0.83
-17,Afterglow Circuit,Club Meridian,house,euphoric,0.87,126,0.92,0.93,0.08
-18,Last Call Lantern,Amos Blue,blues,melancholic,0.51,74,0.29,0.39,0.76
+1,Fortnight (feat. Post Malone),Taylor Swift,alt-pop,sad,0.386,192,0.281,0.504,0.502
+2,The Tortured Poets Department,Taylor Swift,alt-pop,sad,0.428,110,0.292,0.604,0.0483
+3,My Boy Only Breaks His Favorite Toys,Taylor Swift,alt-pop,neutral,0.563,97,0.481,0.596,0.137
+4,Down Bad,Taylor Swift,alt-pop,sad,0.366,160,0.168,0.541,0.56
+5,"So Long, London",Taylor Swift,alt-pop,sad,0.533,160,0.248,0.423,0.73
+6,But Daddy I Love Him,Taylor Swift,alt-pop,intense,0.72,80,0.438,0.521,0.384
+7,Fresh Out The Slammer,Taylor Swift,alt-pop,sad,0.483,87,0.34,0.33,0.624
+8,Florida!!! (feat. Florence + The Machine),Taylor Swift,alt-pop,neutral,0.573,150,0.398,0.533,0.178
+9,Guilty as Sin?,Taylor Swift,alt-pop,neutral,0.428,95,0.487,0.626,0.607
+10,Who’s Afraid of Little Old Me?,Taylor Swift,alt-pop,sad,0.338,120,0.238,0.606,0.315
+11,I Can Fix Him (No Really I Can),Taylor Swift,alt-pop,sad,0.257,107,0.318,0.661,0.768
+12,loml,Taylor Swift,alt-pop,sad,0.272,79,0.195,0.423,0.858
+13,I Can Do It With a Broken Heart,Taylor Swift,alt-pop,sad,0.751,130,0.22,0.701,0.123
+14,The Smallest Man Who Ever Lived,Taylor Swift,alt-pop,sad,0.41,142,0.263,0.426,0.52
+15,The Alchemy,Taylor Swift,alt-pop,neutral,0.421,100,0.353,0.64,0.422
+16,Clara Bow,Taylor Swift,alt-pop,sad,0.318,104,0.214,0.686,0.636
+17,The Black Dog,Taylor Swift,alt-pop,sad,0.27,154,0.23,0.527,0.707
+18,imgonnagetyouback,Taylor Swift,alt-pop,sad,0.391,110,0.15,0.784,0.608
+19,The Albatross,Taylor Swift,alt-pop,sad,0.479,172,0.292,0.352,0.655
+20,Chloe or Sam or Sophia or Marcus,Taylor Swift,alt-pop,sad,0.451,70,0.218,0.516,0.78
+21,How Did It End?,Taylor Swift,alt-pop,sad,0.379,84,0.273,0.492,0.785
+22,So High School,Taylor Swift,alt-pop,sad,0.866,176,0.293,0.366,0.0274
+23,I Hate It Here,Taylor Swift,alt-pop,sad,0.562,106,0.297,0.485,0.717
+24,thanK you aIMee,Taylor Swift,alt-pop,sad,0.541,96,0.252,0.609,0.609
+25,I Look in People's Windows,Taylor Swift,alt-pop,chill,0.274,91,0.385,0.763,0.69
+26,The Prophecy,Taylor Swift,alt-pop,neutral,0.525,168,0.535,0.421,0.825
+27,Cassandra,Taylor Swift,alt-pop,neutral,0.587,140,0.514,0.587,0.806
+28,Peter,Taylor Swift,alt-pop,sad,0.376,177,0.29,0.342,0.805
+29,The Bolter,Taylor Swift,alt-pop,neutral,0.586,184,0.481,0.455,0.638
+30,Robin,Taylor Swift,alt-pop,sad,0.386,138,0.158,0.476,0.791
+31,The Manuscript,Taylor Swift,alt-pop,chill,0.256,94,0.436,0.509,0.901
+32,Fortnight (feat. Post Malone),Taylor Swift,alt-pop,sad,0.386,192,0.281,0.504,0.502
+33,The Tortured Poets Department,Taylor Swift,alt-pop,sad,0.428,110,0.292,0.604,0.0483
+34,My Boy Only Breaks His Favorite Toys,Taylor Swift,alt-pop,neutral,0.563,97,0.481,0.596,0.137
+35,Down Bad,Taylor Swift,alt-pop,sad,0.366,160,0.168,0.541,0.56
+36,"So Long, London",Taylor Swift,alt-pop,sad,0.533,160,0.248,0.423,0.73
+37,But Daddy I Love Him,Taylor Swift,alt-pop,intense,0.72,80,0.438,0.521,0.384
+38,Fresh Out The Slammer,Taylor Swift,alt-pop,sad,0.483,87,0.34,0.33,0.624
+39,Florida!!! (feat. Florence + The Machine),Taylor Swift,alt-pop,neutral,0.573,150,0.398,0.533,0.178
+40,Guilty as Sin?,Taylor Swift,alt-pop,neutral,0.428,95,0.487,0.626,0.607
+41,Who’s Afraid of Little Old Me?,Taylor Swift,alt-pop,sad,0.338,120,0.238,0.606,0.315
+42,I Can Fix Him (No Really I Can),Taylor Swift,alt-pop,sad,0.257,107,0.318,0.661,0.768
+43,loml,Taylor Swift,alt-pop,sad,0.272,79,0.195,0.423,0.858
+44,I Can Do It With a Broken Heart,Taylor Swift,alt-pop,sad,0.751,130,0.22,0.701,0.123
+45,The Smallest Man Who Ever Lived,Taylor Swift,alt-pop,sad,0.41,142,0.263,0.426,0.52
+46,The Alchemy,Taylor Swift,alt-pop,neutral,0.421,100,0.353,0.64,0.422
+47,Clara Bow,Taylor Swift,alt-pop,sad,0.318,104,0.214,0.686,0.636
+48,Welcome To New York (Taylor's Version),Taylor Swift,pop,happy,0.602,117,0.685,0.76,0.00661
+49,Blank Space (Taylor's Version),Taylor Swift,pop,happy,0.719,96,0.71,0.732,0.0901
+50,Style (Taylor's Version),Taylor Swift,pop,sad,0.821,95,0.298,0.514,0.000456
+51,Out Of The Woods (Taylor's Version),Taylor Swift,pop,sad,0.884,92,0.184,0.544,0.000466
+52,All You Had To Do Was Stay (Taylor's Version),Taylor Swift,pop,intense,0.713,97,0.54,0.589,0.000778
+53,Shake It Off (Taylor's Version),Taylor Swift,pop,happy,0.805,160,0.903,0.632,0.0112
+54,I Wish You Would (Taylor's Version),Taylor Swift,pop,intense,0.853,118,0.523,0.671,0.00388
+55,Bad Blood (Taylor's Version),Taylor Swift,pop,sad,0.711,170,0.347,0.624,0.0369
+56,Wildest Dreams (Taylor's Version),Taylor Swift,pop,neutral,0.663,140,0.539,0.587,0.0348
+57,How You Get The Girl (Taylor's Version),Taylor Swift,pop,neutral,0.67,120,0.519,0.761,0.00198
+58,This Love (Taylor’s Version),Taylor Swift,pop,sad,0.494,144,0.0524,0.47,0.302
+59,I Know Places (Taylor's Version),Taylor Swift,pop,intense,0.807,160,0.626,0.572,0.0846
+60,Clean (Taylor's Version),Taylor Swift,pop,sad,0.379,104,0.267,0.782,0.297
+61,Wonderland (Taylor's Version),Taylor Swift,pop,sad,0.703,123,0.32,0.387,0.0105
+62,You Are In Love (Taylor's Version),Taylor Swift,pop,neutral,0.509,85,0.401,0.554,0.572
+63,New Romantics (Taylor's Version),Taylor Swift,pop,happy,0.848,122,0.724,0.653,0.00516
+64,"""Slut!"" (Taylor's Version) (From The Vault)",Taylor Swift,pop,sad,0.415,78,0.313,0.621,0.33
+65,Say Don't Go (Taylor's Version) (From The Vault),Taylor Swift,pop,sad,0.539,110,0.186,0.632,0.0684
+66,Now That We Don't Talk (Taylor's Version) (From The Vault),Taylor Swift,pop,sad,0.509,110,0.0768,0.8,0.16
+67,Suburban Legends (Taylor's Version) (From The Vault),Taylor Swift,pop,neutral,0.607,118,0.394,0.695,0.212
+68,Is It Over Now? (Taylor's Version) (From The Vault),Taylor Swift,pop,sad,0.651,100,0.153,0.599,0.0486
+69,Bad Blood (feat. Kendrick Lamar) (Taylor's Version),Taylor Swift,pop,sad,0.644,170,0.197,0.604,0.0143
+70,Welcome To New York (Taylor's Version),Taylor Swift,pop,happy,0.602,117,0.685,0.76,0.00661
+71,Blank Space (Taylor's Version),Taylor Swift,pop,happy,0.719,96,0.71,0.732,0.0901
+72,Style (Taylor's Version),Taylor Swift,pop,sad,0.821,95,0.298,0.514,0.000456
+73,Out Of The Woods (Taylor's Version),Taylor Swift,pop,sad,0.884,92,0.184,0.544,0.000466
+74,All You Had To Do Was Stay (Taylor's Version),Taylor Swift,pop,intense,0.713,97,0.54,0.589,0.000778
+75,Shake It Off (Taylor's Version),Taylor Swift,pop,happy,0.805,160,0.903,0.632,0.0112
+76,I Wish You Would (Taylor's Version),Taylor Swift,pop,intense,0.853,118,0.523,0.671,0.00388
+77,Bad Blood (Taylor's Version),Taylor Swift,pop,sad,0.711,170,0.347,0.624,0.0369
+78,Wildest Dreams (Taylor's Version),Taylor Swift,pop,neutral,0.663,140,0.539,0.587,0.0348
+79,How You Get The Girl (Taylor's Version),Taylor Swift,pop,neutral,0.67,120,0.519,0.761,0.00198
+80,This Love (Taylor’s Version),Taylor Swift,pop,sad,0.494,144,0.0524,0.47,0.302
+81,I Know Places (Taylor's Version),Taylor Swift,pop,intense,0.807,160,0.626,0.572,0.0846
+82,Clean (Taylor's Version),Taylor Swift,pop,sad,0.379,104,0.267,0.782,0.297
+83,Wonderland (Taylor's Version),Taylor Swift,pop,sad,0.703,123,0.32,0.387,0.0105
+84,You Are In Love (Taylor's Version),Taylor Swift,pop,neutral,0.509,85,0.401,0.554,0.572
+85,New Romantics (Taylor's Version),Taylor Swift,pop,happy,0.848,122,0.724,0.653,0.00516
+86,"""Slut!"" (Taylor's Version) (From The Vault)",Taylor Swift,pop,sad,0.415,78,0.313,0.621,0.33
+87,Say Don't Go (Taylor's Version) (From The Vault),Taylor Swift,pop,sad,0.539,110,0.186,0.632,0.0684
+88,Now That We Don't Talk (Taylor's Version) (From The Vault),Taylor Swift,pop,sad,0.509,110,0.0768,0.8,0.16
+89,Suburban Legends (Taylor's Version) (From The Vault),Taylor Swift,pop,neutral,0.607,118,0.394,0.695,0.212
+90,Is It Over Now? (Taylor's Version) (From The Vault),Taylor Swift,pop,sad,0.651,100,0.153,0.599,0.0486
+91,Mine (Taylor's Version),Taylor Swift,country,intense,0.793,121,0.5,0.647,0.00314
+92,Sparks Fly (Taylor’s Version),Taylor Swift,country,intense,0.769,115,0.366,0.605,0.0241
+93,Back To December (Taylor's Version),Taylor Swift,country,sad,0.635,142,0.235,0.486,0.00705
+94,Speak Now (Taylor's Version),Taylor Swift,country,neutral,0.686,119,0.598,0.734,0.225
+95,Dear John (Taylor's Version),Taylor Swift,country,sad,0.468,119,0.115,0.379,0.0327
+96,Mean (Taylor's Version),Taylor Swift,country,intense,0.7,164,0.596,0.526,0.321
+97,The Story Of Us (Taylor's Version),Taylor Swift,country,intense,0.784,140,0.552,0.516,0.00136
+98,Never Grow Up (Taylor's Version),Taylor Swift,country,chill,0.339,125,0.572,0.684,0.867
+99,Enchanted (Taylor's Version),Taylor Swift,country,sad,0.553,82,0.227,0.52,0.016
+100,Better Than Revenge (Taylor's Version),Taylor Swift,country,happy,0.893,146,0.659,0.505,0.000795
+101,Innocent (Taylor's Version),Taylor Swift,country,sad,0.611,134,0.126,0.524,0.0972
+102,Haunted (Taylor's Version),Taylor Swift,country,intense,0.916,162,0.371,0.44,0.00552
+103,Last Kiss (Taylor's Version),Taylor Swift,country,sad,0.362,80,0.187,0.557,0.443
+104,Long Live (Taylor's Version),Taylor Swift,country,sad,0.628,204,0.0984,0.38,0.0162
+105,Ours (Taylor’s Version),Taylor Swift,country,sad,0.475,160,0.293,0.539,0.42
+106,Superman (Taylor’s Version),Taylor Swift,country,sad,0.733,132,0.347,0.537,0.00207
+107,Electric Touch (feat. Fall Out Boy) (Taylor’s Version) (From The Vault),Taylor Swift,country,sad,0.854,131,0.26,0.547,0.018
+108,When Emma Falls in Love (Taylor’s Version) (From The Vault),Taylor Swift,country,sad,0.759,78,0.234,0.524,0.168
+109,I Can See You (Taylor’s Version) (From The Vault),Taylor Swift,country,happy,0.768,123,0.813,0.695,0.0577
+110,Castles Crumbling (feat. Hayley Williams) (Taylor’s Version) (From The Vault),Taylor Swift,country,neutral,0.565,148,0.351,0.578,0.342
+111,Foolish One (Taylor’s Version) (From The Vault),Taylor Swift,country,neutral,0.613,97,0.557,0.672,0.599
+112,Timeless (Taylor’s Version) (From The Vault),Taylor Swift,country,happy,0.578,143,0.651,0.629,0.332
+113,Lavender Haze,Taylor Swift,synth-pop,sad,0.449,97,0.0955,0.735,0.23
+114,Maroon,Taylor Swift,synth-pop,sad,0.384,108,0.0384,0.655,0.0634
+115,Anti-Hero,Taylor Swift,synth-pop,neutral,0.648,97,0.49,0.633,0.121
+116,Snow On The Beach (feat. Lana Del Rey),Taylor Swift,synth-pop,sad,0.321,110,0.153,0.663,0.701
+117,"You're On Your Own, Kid",Taylor Swift,synth-pop,chill,0.39,120,0.395,0.696,0.447
+118,Midnight Rain,Taylor Swift,synth-pop,sad,0.375,138,0.203,0.604,0.71
+119,Question...?,Taylor Swift,synth-pop,sad,0.51,109,0.105,0.654,0.206
+120,Vigilante Shit,Taylor Swift,synth-pop,sad,0.267,80,0.168,0.872,0.166
+121,Bejeweled,Taylor Swift,synth-pop,neutral,0.551,164,0.443,0.687,0.0593
+122,Labyrinth,Taylor Swift,synth-pop,sad,0.295,110,0.132,0.48,0.797
+123,Karma,Taylor Swift,synth-pop,sad,0.619,90,0.121,0.64,0.062
+124,Sweet Nothing,Taylor Swift,synth-pop,chill,0.161,176,0.407,0.336,0.968
+125,Mastermind,Taylor Swift,synth-pop,sad,0.343,126,0.137,0.66,0.565
+126,The Great War,Taylor Swift,synth-pop,intense,0.747,96,0.574,0.57,0.199
+127,Bigger Than The Whole Sky,Taylor Swift,synth-pop,sad,0.22,166,0.0705,0.42,0.841
+128,Paris,Taylor Swift,synth-pop,sad,0.518,111,0.347,0.703,0.103
+129,High Infidelity,Taylor Swift,synth-pop,happy,0.547,176,0.768,0.571,0.704
+130,Glitch,Taylor Swift,synth-pop,sad,0.47,141,0.347,0.677,0.314
+131,"Would've, Could've, Should've",Taylor Swift,synth-pop,intense,0.846,158,0.548,0.485,0.393
+132,Dear Reader,Taylor Swift,synth-pop,sad,0.39,108,0.151,0.674,0.464
+133,Hits Different,Taylor Swift,synth-pop,sad,0.786,106,0.261,0.666,0.134
+134,Snow On The Beach (feat. More Lana Del Rey),Taylor Swift,synth-pop,sad,0.399,110,0.265,0.664,0.797
+135,Karma (feat. Ice Spice),Taylor Swift,synth-pop,sad,0.626,90,0.0705,0.615,0.0574
+136,Lavender Haze,Taylor Swift,synth-pop,sad,0.449,97,0.0955,0.735,0.23
+137,Maroon,Taylor Swift,synth-pop,sad,0.384,108,0.0384,0.655,0.0634
+138,Anti-Hero,Taylor Swift,synth-pop,neutral,0.648,97,0.49,0.633,0.121
+139,Snow On The Beach (feat. Lana Del Rey),Taylor Swift,synth-pop,sad,0.321,110,0.153,0.663,0.701
+140,"You're On Your Own, Kid",Taylor Swift,synth-pop,chill,0.39,120,0.395,0.696,0.447
+141,Midnight Rain,Taylor Swift,synth-pop,sad,0.375,138,0.203,0.604,0.71
+142,Question...?,Taylor Swift,synth-pop,sad,0.51,109,0.105,0.654,0.206
+143,Vigilante Shit,Taylor Swift,synth-pop,sad,0.267,80,0.168,0.872,0.166
+144,Bejeweled,Taylor Swift,synth-pop,neutral,0.551,164,0.443,0.687,0.0593
+145,Labyrinth,Taylor Swift,synth-pop,sad,0.295,110,0.132,0.48,0.797
+146,Karma,Taylor Swift,synth-pop,sad,0.619,90,0.121,0.64,0.062
+147,Sweet Nothing,Taylor Swift,synth-pop,chill,0.161,176,0.407,0.336,0.968
+148,Mastermind,Taylor Swift,synth-pop,sad,0.343,126,0.137,0.66,0.565
+149,The Great War,Taylor Swift,synth-pop,intense,0.747,96,0.574,0.57,0.199
+150,Bigger Than The Whole Sky,Taylor Swift,synth-pop,sad,0.22,166,0.0705,0.42,0.841
+151,Paris,Taylor Swift,synth-pop,sad,0.518,111,0.347,0.703,0.103
+152,High Infidelity,Taylor Swift,synth-pop,happy,0.547,176,0.768,0.571,0.704
+153,Glitch,Taylor Swift,synth-pop,sad,0.47,141,0.347,0.677,0.314
+154,"Would've, Could've, Should've",Taylor Swift,synth-pop,intense,0.846,158,0.548,0.485,0.393
+155,Dear Reader,Taylor Swift,synth-pop,sad,0.39,108,0.151,0.674,0.464
+156,Lavender Haze,Taylor Swift,synth-pop,sad,0.449,97,0.0955,0.735,0.23
+157,Maroon,Taylor Swift,synth-pop,sad,0.384,108,0.0384,0.655,0.0634
+158,Anti-Hero,Taylor Swift,synth-pop,neutral,0.648,97,0.49,0.633,0.121
+159,Snow On The Beach (feat. Lana Del Rey),Taylor Swift,synth-pop,sad,0.321,110,0.153,0.663,0.701
+160,"You're On Your Own, Kid",Taylor Swift,synth-pop,chill,0.39,120,0.395,0.696,0.447
+161,Midnight Rain,Taylor Swift,synth-pop,sad,0.375,138,0.203,0.604,0.71
+162,Question...?,Taylor Swift,synth-pop,sad,0.51,109,0.105,0.654,0.206
+163,Vigilante Shit,Taylor Swift,synth-pop,sad,0.267,80,0.168,0.872,0.166
+164,Bejeweled,Taylor Swift,synth-pop,neutral,0.551,164,0.443,0.687,0.0593
+165,Labyrinth,Taylor Swift,synth-pop,sad,0.295,110,0.132,0.48,0.797
+166,Karma,Taylor Swift,synth-pop,sad,0.619,90,0.121,0.64,0.062
+167,Sweet Nothing,Taylor Swift,synth-pop,chill,0.161,176,0.407,0.336,0.968
+168,Mastermind,Taylor Swift,synth-pop,sad,0.343,126,0.137,0.66,0.565
+169,State Of Grace (Taylor's Version),Taylor Swift,pop-rock,sad,0.713,130,0.328,0.594,0.000328
+170,Red (Taylor's Version),Taylor Swift,pop-rock,intense,0.777,125,0.408,0.516,0.00108
+171,Treacherous (Taylor's Version),Taylor Swift,pop-rock,sad,0.593,110,0.299,0.645,0.0344
+172,I Knew You Were Trouble (Taylor's Version),Taylor Swift,pop-rock,happy,0.557,154,0.767,0.584,0.0129
+173,All Too Well (Taylor's Version),Taylor Swift,pop-rock,sad,0.528,186,0.132,0.44,0.0171
+174,22 (Taylor's Version),Taylor Swift,pop-rock,neutral,0.695,104,0.642,0.642,0.000443
+175,I Almost Do (Taylor's Version),Taylor Swift,pop-rock,sad,0.559,146,0.248,0.511,0.0167
+176,We Are Never Ever Getting Back Together (Taylor's Version),Taylor Swift,pop-rock,happy,0.686,172,0.716,0.567,0.0317
+177,Stay Stay Stay (Taylor's Version),Taylor Swift,pop-rock,happy,0.681,100,0.663,0.693,0.0848
+178,The Last Time (feat. Gary Lightbody of Snow Patrol) (Taylor’s Version),Taylor Swift,pop-rock,sad,0.534,94,0.155,0.502,0.0399
+179,Holy Ground (Taylor's Version),Taylor Swift,pop-rock,intense,0.809,157,0.511,0.622,0.0288
+180,Sad Beautiful Tragic (Taylor's Version),Taylor Swift,pop-rock,sad,0.406,130,0.232,0.601,0.622
+181,The Lucky One (Taylor's Version),Taylor Swift,pop-rock,neutral,0.571,118,0.538,0.686,0.066
+182,Everything Has Changed (feat. Ed Sheeran) (Taylor’s Version),Taylor Swift,pop-rock,neutral,0.61,80,0.474,0.498,0.271
+183,Starlight (Taylor's Version),Taylor Swift,pop-rock,neutral,0.685,126,0.605,0.628,0.00324
+184,Begin Again (Taylor's Version),Taylor Swift,pop-rock,sad,0.527,79,0.267,0.519,0.075
+185,The Moment I Knew (Taylor's Version),Taylor Swift,pop-rock,sad,0.402,126,0.208,0.636,0.0494
+186,Come Back...Be Here (Taylor's Version),Taylor Swift,pop-rock,neutral,0.632,80,0.399,0.46,0.0158
+187,Girl At Home (Taylor's Version),Taylor Swift,pop-rock,intense,0.736,125,0.612,0.691,0.00955
+188,State Of Grace (Acoustic Version) (Taylor's Version),Taylor Swift,pop-rock,sad,0.131,209,0.101,0.445,0.663
+189,Ronan (Taylor's Version),Taylor Swift,pop-rock,chill,0.279,116,0.38,0.623,0.661
+190,Better Man (Taylor's Version) (From The Vault),Taylor Swift,pop-rock,sad,0.579,74,0.255,0.473,0.214
+191,Nothing New (feat. Phoebe Bridgers) (Taylor’s Version) (From The Vault),Taylor Swift,pop-rock,chill,0.377,102,0.446,0.606,0.817
+192,Babe (Taylor's Version) (From The Vault),Taylor Swift,pop-rock,happy,0.743,168,0.746,0.584,0.0538
+193,Message In A Bottle (Taylor's Version) (From The Vault),Taylor Swift,pop-rock,intense,0.791,116,0.494,0.622,0.00188
+194,I Bet You Think About Me (feat. Chris Stapleton) (Taylor’s Version) (From The Vault),Taylor Swift,pop-rock,intense,0.715,150,0.473,0.391,0.167
+195,Forever Winter (Taylor's Version) (From The Vault),Taylor Swift,pop-rock,neutral,0.552,116,0.41,0.611,0.256
+196,Run (feat. Ed Sheeran) (Taylor’s Version) (From The Vault),Taylor Swift,pop-rock,neutral,0.488,125,0.443,0.61,0.817
+197,The Very First Night (Taylor's Version) (From The Vault),Taylor Swift,pop-rock,intense,0.733,121,0.581,0.678,0.00115
+198,All Too Well (10 Minute Version) (Taylor's Version) (From The Vault),Taylor Swift,pop-rock,sad,0.518,93,0.205,0.631,0.274
+199,Fearless (Taylor’s Version),Taylor Swift,country,intense,0.741,100,0.43,0.569,0.0122
+200,Fifteen (Taylor’s Version),Taylor Swift,country,sad,0.646,95,0.289,0.559,0.116
+201,Love Story (Taylor’s Version),Taylor Swift,country,intense,0.792,119,0.415,0.627,0.13
+202,Hey Stephen (Taylor’s Version),Taylor Swift,country,happy,0.571,116,0.797,0.788,0.106
+203,White Horse (Taylor’s Version),Taylor Swift,country,neutral,0.517,185,0.366,0.423,0.369
+204,You Belong With Me (Taylor’s Version),Taylor Swift,country,intense,0.773,130,0.474,0.632,0.0623
+205,Breathe (feat. Colbie Caillat) (Taylor’s Version),Taylor Swift,country,sad,0.626,148,0.321,0.506,0.156
+206,Tell Me Why (Taylor’s Version),Taylor Swift,country,intense,0.909,100,0.541,0.578,0.0222
+207,You’re Not Sorry (Taylor’s Version),Taylor Swift,country,sad,0.444,134,0.241,0.506,0.0538
+208,The Way I Loved You (Taylor’s Version),Taylor Swift,country,intense,0.732,161,0.472,0.402,0.0033
+209,Forever & Always (Taylor’s Version),Taylor Swift,country,happy,0.821,128,0.673,0.598,0.0231
+210,The Best Day (Taylor’s Version),Taylor Swift,country,neutral,0.576,125,0.469,0.642,0.488
+211,Change (Taylor’s Version),Taylor Swift,country,sad,0.815,96,0.344,0.499,0.000191
+212,Jump Then Fall (Taylor’s Version),Taylor Swift,country,neutral,0.69,160,0.624,0.572,0.0474
+213,Untouchable (Taylor’s Version),Taylor Swift,country,sad,0.531,200,0.224,0.393,0.0181
+214,Forever & Always (Piano Version) (Taylor’s Version),Taylor Swift,country,sad,0.273,119,0.271,0.546,0.819
+215,Come In With The Rain (Taylor’s Version),Taylor Swift,country,sad,0.564,144,0.167,0.476,0.0406
+216,Superstar (Taylor’s Version),Taylor Swift,country,sad,0.555,172,0.171,0.454,0.157
+217,The Other Side Of The Door (Taylor’s Version),Taylor Swift,country,intense,0.873,164,0.629,0.432,0.0279
+218,Today Was A Fairytale (Taylor’s Version),Taylor Swift,country,sad,0.779,158,0.328,0.482,0.0135
+219,You All Over Me (feat. Maren Morris) (Taylor’s Version) (From The Vault),Taylor Swift,country,neutral,0.494,143,0.44,0.599,0.816
+220,Mr. Perfectly Fine (Taylor’s Version) (From The Vault),Taylor Swift,country,happy,0.817,136,0.714,0.66,0.162
+221,We Were Happy (Taylor’s Version) (From The Vault),Taylor Swift,country,sad,0.373,106,0.13,0.609,0.849
+222,That’s When (feat. Keith Urban) (Taylor’s Version) (From The Vault),Taylor Swift,country,neutral,0.608,90,0.508,0.588,0.225
+223,Don’t You (Taylor’s Version) (From The Vault),Taylor Swift,country,neutral,0.473,102,0.405,0.563,0.514
+224,Bye Bye Baby (Taylor’s Version) (From The Vault),Taylor Swift,country,neutral,0.624,80,0.527,0.624,0.334
+225,willow,Taylor Swift,folk,neutral,0.574,81,0.529,0.392,0.833
+226,champagne problems,Taylor Swift,folk,sad,0.24,171,0.32,0.462,0.92
+227,gold rush,Taylor Swift,folk,neutral,0.462,112,0.353,0.512,0.83
+228,‘tis the damn season,Taylor Swift,folk,sad,0.434,146,0.348,0.575,0.735
+229,tolerate it,Taylor Swift,folk,sad,0.361,75,0.221,0.316,0.878
+230,"no body, no crime (feat. HAIM)",Taylor Swift,folk,neutral,0.613,79,0.535,0.546,0.418
+231,happiness,Taylor Swift,folk,sad,0.334,122,0.211,0.559,0.87
+232,dorothea,Taylor Swift,folk,neutral,0.488,120,0.354,0.605,0.696
+233,coney island (feat. The National),Taylor Swift,folk,sad,0.537,108,0.292,0.537,0.819
+234,ivy,Taylor Swift,folk,neutral,0.545,89,0.535,0.515,0.855
+235,cowboy like me,Taylor Swift,folk,neutral,0.517,128,0.511,0.604,0.768
+236,long story short,Taylor Swift,folk,intense,0.73,158,0.573,0.546,0.66
+237,marjorie,Taylor Swift,folk,sad,0.561,96,0.287,0.535,0.876
+238,closure,Taylor Swift,folk,happy,0.704,152,0.92,0.689,0.835
+239,evermore (feat. Bon Iver),Taylor Swift,folk,sad,0.27,125,0.32,0.39,0.937
+240,right where you left me - bonus track,Taylor Swift,folk,neutral,0.619,138,0.645,0.581,0.769
+241,it’s time to go - bonus track,Taylor Swift,folk,neutral,0.41,152,0.416,0.592,0.801
+242,willow,Taylor Swift,folk,neutral,0.574,81,0.529,0.392,0.833
+243,champagne problems,Taylor Swift,folk,sad,0.24,171,0.32,0.462,0.92
+244,gold rush,Taylor Swift,folk,neutral,0.462,112,0.353,0.512,0.83
+245,‘tis the damn season,Taylor Swift,folk,sad,0.434,146,0.348,0.575,0.735
+246,tolerate it,Taylor Swift,folk,sad,0.361,75,0.221,0.316,0.878
+247,"no body, no crime (feat. HAIM)",Taylor Swift,folk,neutral,0.613,79,0.535,0.546,0.418
+248,happiness,Taylor Swift,folk,sad,0.334,122,0.211,0.559,0.87
+249,dorothea,Taylor Swift,folk,neutral,0.488,120,0.354,0.605,0.696
+250,coney island (feat. The National),Taylor Swift,folk,sad,0.537,108,0.292,0.537,0.819
+251,ivy,Taylor Swift,folk,neutral,0.545,89,0.535,0.515,0.855
+252,cowboy like me,Taylor Swift,folk,neutral,0.517,128,0.511,0.604,0.768
+253,long story short,Taylor Swift,folk,intense,0.73,158,0.573,0.546,0.66
+254,marjorie,Taylor Swift,folk,sad,0.561,96,0.287,0.535,0.876
+255,closure,Taylor Swift,folk,happy,0.704,152,0.92,0.689,0.835
+256,evermore (feat. Bon Iver),Taylor Swift,folk,sad,0.27,125,0.32,0.39,0.937
+257,the 1,Taylor Swift,folk,sad,0.361,140,0.163,0.78,0.75
+258,cardigan,Taylor Swift,folk,neutral,0.58,130,0.534,0.612,0.525
+259,the last great american dynasty,Taylor Swift,folk,happy,0.653,148,0.701,0.688,0.481
+260,exile (feat. Bon Iver),Taylor Swift,folk,sad,0.374,76,0.16,0.31,0.761
+261,my tears ricochet,Taylor Swift,folk,sad,0.265,130,0.112,0.456,0.814
+262,mirrorball,Taylor Swift,folk,sad,0.417,110,0.347,0.549,0.686
+263,seven,Taylor Swift,folk,neutral,0.494,95,0.374,0.602,0.888
+264,august,Taylor Swift,folk,neutral,0.634,90,0.42,0.387,0.553
+265,this is me trying,Taylor Swift,folk,neutral,0.478,136,0.408,0.511,0.312
+266,illicit affairs,Taylor Swift,folk,chill,0.304,120,0.44,0.529,0.862
+267,invisible string,Taylor Swift,folk,neutral,0.459,83,0.454,0.651,0.859
+268,mad woman,Taylor Swift,folk,intense,0.7,142,0.451,0.593,0.67
+269,epiphany,Taylor Swift,folk,sad,0.254,94,0.103,0.317,0.727
+270,betty,Taylor Swift,folk,chill,0.376,96,0.476,0.595,0.589
+271,peace,Taylor Swift,folk,sad,0.284,150,0.328,0.644,0.916
+272,hoax,Taylor Swift,folk,chill,0.178,119,0.404,0.676,0.964
+273,the lakes - bonus track,Taylor Swift,folk,sad,0.258,180,0.268,0.313,0.842
+274,the 1 - the long pond studio sessions,Taylor Swift,folk,sad,0.25,140,0.156,0.708,0.898
+275,cardigan - the long pond studio sessions,Taylor Swift,folk,sad,0.234,86,0.247,0.395,0.88
+276,the last great american dynasty - the long pond studio sessions,Taylor Swift,folk,neutral,0.618,148,0.614,0.64,0.743
+277,exile (feat. Bon Iver) - the long pond studio sessions,Taylor Swift,folk,sad,0.305,152,0.108,0.359,0.848
+278,my tears ricochet - the long pond studio sessions,Taylor Swift,folk,sad,0.172,129,0.168,0.531,0.946
+279,mirrorball - the long pond studio sessions,Taylor Swift,folk,sad,0.386,110,0.109,0.509,0.78
+280,seven - the long pond studio sessions,Taylor Swift,folk,neutral,0.449,95,0.363,0.694,0.914
+281,august - the long pond studio sessions,Taylor Swift,folk,neutral,0.663,90,0.545,0.554,0.5
+282,this is me trying - the long pond studio sessions,Taylor Swift,folk,sad,0.332,68,0.157,0.435,0.928
+283,illicit affairs - the long pond studio sessions,Taylor Swift,folk,chill,0.235,118,0.435,0.489,0.883
+284,invisible string - the long pond studio sessions,Taylor Swift,folk,chill,0.282,83,0.351,0.59,0.942
+285,mad woman - the long pond studio sessions,Taylor Swift,folk,sad,0.465,142,0.346,0.663,0.887
+286,epiphany - the long pond studio sessions,Taylor Swift,folk,sad,0.2,94,0.113,0.524,0.916
+287,betty - the long pond studio sessions,Taylor Swift,folk,chill,0.316,96,0.518,0.538,0.841
+288,peace - the long pond studio sessions,Taylor Swift,folk,chill,0.344,150,0.513,0.619,0.93
+289,hoax - the long pond studio sessions,Taylor Swift,folk,chill,0.155,119,0.483,0.682,0.962
+290,the lakes - the long pond studio sessions,Taylor Swift,folk,sad,0.221,90,0.112,0.606,0.794
+291,the 1,Taylor Swift,folk,sad,0.361,140,0.163,0.78,0.75
+292,cardigan,Taylor Swift,folk,neutral,0.58,130,0.534,0.612,0.525
+293,the last great american dynasty,Taylor Swift,folk,happy,0.653,148,0.701,0.688,0.481
+294,exile (feat. Bon Iver),Taylor Swift,folk,sad,0.374,76,0.16,0.31,0.761
+295,my tears ricochet,Taylor Swift,folk,sad,0.265,130,0.112,0.456,0.814
+296,mirrorball,Taylor Swift,folk,sad,0.417,110,0.347,0.549,0.686
+297,seven,Taylor Swift,folk,neutral,0.494,95,0.374,0.602,0.888
+298,august,Taylor Swift,folk,neutral,0.634,90,0.42,0.387,0.553
+299,this is me trying,Taylor Swift,folk,neutral,0.478,136,0.408,0.511,0.312
+300,illicit affairs,Taylor Swift,folk,chill,0.304,120,0.44,0.529,0.862
+301,invisible string,Taylor Swift,folk,neutral,0.459,83,0.454,0.651,0.859
+302,mad woman,Taylor Swift,folk,intense,0.7,142,0.451,0.593,0.67
+303,epiphany,Taylor Swift,folk,sad,0.254,94,0.103,0.317,0.727
+304,betty,Taylor Swift,folk,chill,0.376,96,0.476,0.595,0.589
+305,peace,Taylor Swift,folk,sad,0.284,150,0.328,0.644,0.916
+306,hoax,Taylor Swift,folk,chill,0.178,119,0.404,0.676,0.964
+307,the lakes - bonus track,Taylor Swift,folk,sad,0.258,180,0.268,0.313,0.842
+308,the 1,Taylor Swift,folk,sad,0.357,140,0.172,0.777,0.757
+309,cardigan,Taylor Swift,folk,neutral,0.581,130,0.551,0.613,0.537
+310,the last great american dynasty,Taylor Swift,folk,happy,0.662,148,0.706,0.686,0.467
+311,exile (feat. Bon Iver),Taylor Swift,folk,sad,0.38,76,0.152,0.298,0.778
+312,my tears ricochet,Taylor Swift,folk,sad,0.263,130,0.112,0.469,0.806
+313,mirrorball,Taylor Swift,folk,neutral,0.413,110,0.379,0.553,0.687
+314,seven,Taylor Swift,folk,neutral,0.488,95,0.415,0.596,0.9
+315,august,Taylor Swift,folk,neutral,0.623,90,0.403,0.532,0.538
+316,this is me trying,Taylor Swift,folk,neutral,0.476,136,0.412,0.515,0.314
+317,illicit affairs,Taylor Swift,folk,chill,0.31,120,0.46,0.559,0.881
+318,invisible string,Taylor Swift,folk,neutral,0.452,83,0.45,0.653,0.838
+319,mad woman,Taylor Swift,folk,neutral,0.699,142,0.506,0.592,0.655
+320,epiphany,Taylor Swift,folk,sad,0.267,94,0.106,0.175,0.731
+321,betty,Taylor Swift,folk,chill,0.377,96,0.502,0.593,0.6
+322,peace,Taylor Swift,folk,sad,0.272,150,0.339,0.647,0.918
+323,hoax,Taylor Swift,folk,chill,0.181,119,0.429,0.662,0.966
+324,I Forgot That You Existed,Taylor Swift,pop,chill,0.316,93,0.541,0.664,0.298
+325,Cruel Summer,Taylor Swift,pop,intense,0.702,170,0.564,0.552,0.117
+326,Lover,Taylor Swift,pop,neutral,0.543,69,0.453,0.359,0.492
+327,The Man,Taylor Swift,pop,neutral,0.658,110,0.633,0.777,0.0767
+328,The Archer,Taylor Swift,pop,sad,0.574,124,0.166,0.292,0.12
+329,I Think He Knows,Taylor Swift,pop,chill,0.366,100,0.416,0.897,0.00889
+330,Miss Americana & The Heartbreak Prince,Taylor Swift,pop,intense,0.747,150,0.487,0.662,0.028
+331,Paper Rings,Taylor Swift,pop,happy,0.719,104,0.865,0.811,0.0129
+332,Cornelia Street,Taylor Swift,pop,sad,0.624,102,0.248,0.824,0.781
+333,Death By A Thousand Cuts,Taylor Swift,pop,sad,0.732,94,0.313,0.712,0.454
+334,London Boy,Taylor Swift,pop,intense,0.71,158,0.557,0.695,0.0246
+335,Soon You’ll Get Better (feat. The Chicks),Taylor Swift,pop,chill,0.182,207,0.421,0.433,0.907
+336,False God,Taylor Swift,pop,chill,0.32,80,0.351,0.739,0.736
+337,You Need To Calm Down,Taylor Swift,pop,happy,0.671,85,0.714,0.771,0.00929
+338,Afterglow,Taylor Swift,pop,neutral,0.449,111,0.399,0.756,0.13
+339,ME! (feat. Brendon Urie of Panic! At The Disco),Taylor Swift,pop,happy,0.83,182,0.728,0.61,0.033
+340,It’s Nice To Have A Friend,Taylor Swift,pop,chill,0.175,70,0.545,0.737,0.971
+341,Daylight,Taylor Swift,pop,sad,0.496,150,0.265,0.557,0.808
+342,...Ready For It?,Taylor Swift,synth-pop,intense,0.764,160,0.417,0.613,0.0527
+343,End Game,Taylor Swift,synth-pop,sad,0.589,159,0.151,0.649,0.00845
+344,I Did Something Bad,Taylor Swift,synth-pop,sad,0.602,83,0.305,0.696,0.0679
+345,Don’t Blame Me,Taylor Swift,synth-pop,sad,0.534,136,0.193,0.615,0.106
+346,Delicate,Taylor Swift,synth-pop,sad,0.404,95,0.0499,0.75,0.216
+347,Look What You Made Me Do,Taylor Swift,synth-pop,intense,0.709,128,0.506,0.766,0.204
+348,So It Goes...,Taylor Swift,synth-pop,neutral,0.61,75,0.374,0.574,0.122
+349,Gorgeous,Taylor Swift,synth-pop,neutral,0.535,92,0.451,0.8,0.0713
+350,Getaway Car,Taylor Swift,synth-pop,neutral,0.689,172,0.351,0.562,0.00465
+351,King Of My Heart,Taylor Swift,synth-pop,sad,0.703,110,0.314,0.675,0.00882
+352,Dancing With Our Hands Tied,Taylor Swift,synth-pop,sad,0.691,160,0.284,0.624,0.0604
+353,Dress,Taylor Swift,synth-pop,sad,0.469,120,0.0851,0.719,0.0329
+354,This Is Why We Can't Have Nice Things,Taylor Swift,synth-pop,intense,0.789,164,0.438,0.567,0.0156
+355,Call It What You Want,Taylor Swift,synth-pop,sad,0.504,164,0.252,0.598,0.186
+356,New Year’s Day,Taylor Swift,synth-pop,sad,0.151,95,0.23,0.661,0.921
+357,All Too Well,Taylor Swift,synth-pop,sad,0.605,186,0.317,0.463,0.0448
+358,Wildest Dreams,Taylor Swift,synth-pop,neutral,0.688,140,0.461,0.55,0.0703
+359,The Best Day,Taylor Swift,synth-pop,neutral,0.448,126,0.386,0.668,0.638
+360,Red,Taylor Swift,synth-pop,intense,0.899,125,0.647,0.605,0.0779
+361,Holy Ground,Taylor Swift,synth-pop,intense,0.816,157,0.648,0.627,0.0159
+362,Teardrops On My Guitar - Radio Single Remix,Taylor Swift,synth-pop,sad,0.427,100,0.265,0.626,0.315
+363,Our Song,Taylor Swift,synth-pop,neutral,0.663,178,0.565,0.545,0.114
+364,22,Taylor Swift,synth-pop,happy,0.732,104,0.677,0.66,0.00254
+365,I Knew You Were Trouble.,Taylor Swift,synth-pop,happy,0.464,77,0.666,0.536,0.00476
+366,I Don’t Wanna Live Forever (Fifty Shades Darker),Taylor Swift,synth-pop,sad,0.444,118,0.106,0.73,0.059
+367,Mean,Taylor Swift,synth-pop,happy,0.755,164,0.791,0.576,0.449
+368,How You Get The Girl,Taylor Swift,synth-pop,neutral,0.657,120,0.546,0.764,0.00363
+369,So It Goes...,Taylor Swift,synth-pop,neutral,0.61,75,0.371,0.578,0.122
+370,Fifteen,Taylor Swift,synth-pop,sad,0.63,95,0.217,0.549,0.07
+371,Mine,Taylor Swift,synth-pop,happy,0.781,121,0.662,0.622,0.00311
+372,Sparks Fly,Taylor Swift,synth-pop,intense,0.782,115,0.399,0.61,0.041
+373,State Of Grace,Taylor Swift,synth-pop,intense,0.828,130,0.383,0.591,0.000182
+374,Haunted,Taylor Swift,synth-pop,intense,0.948,162,0.371,0.43,0.0655
+375,Never Grow Up,Taylor Swift,synth-pop,chill,0.309,125,0.546,0.714,0.824
+376,Treacherous,Taylor Swift,synth-pop,neutral,0.621,110,0.395,0.704,0.101
+377,Babe,Taylor Swift,synth-pop,intense,0.785,172,0.647,0.577,0.0221
+378,Welcome To New York,Taylor Swift,synth-pop,happy,0.634,117,0.658,0.789,0.0348
+379,Fearless,Taylor Swift,synth-pop,intense,0.717,100,0.429,0.603,0.0381
+380,Enchanted,Taylor Swift,synth-pop,sad,0.629,82,0.222,0.536,0.0707
+381,Change,Taylor Swift,synth-pop,sad,0.764,96,0.233,0.543,0.00418
+382,Ours,Taylor Swift,synth-pop,sad,0.56,160,0.228,0.609,0.469
+383,Out Of The Woods,Taylor Swift,synth-pop,sad,0.841,92,0.339,0.553,0.000743
+384,Come Back...Be Here,Taylor Swift,synth-pop,sad,0.548,80,0.22,0.486,0.00471
+385,A Place in this World,Taylor Swift,synth-pop,intense,0.767,115,0.438,0.573,0.0576
+386,This Love,Taylor Swift,synth-pop,sad,0.435,144,0.108,0.48,0.679
+387,The Lucky One,Taylor Swift,synth-pop,neutral,0.505,118,0.561,0.706,0.0352
+388,Invisible,Taylor Swift,synth-pop,sad,0.384,96,0.217,0.608,0.56
+389,Breathe,Taylor Swift,synth-pop,sad,0.48,74,0.167,0.442,0.416
+390,Better Man,Taylor Swift,synth-pop,intense,0.844,144,0.508,0.503,0.121
+391,Jump Then Fall,Taylor Swift,synth-pop,happy,0.699,80,0.827,0.617,0.113
+392,Begin Again,Taylor Swift,synth-pop,sad,0.526,79,0.312,0.516,0.197
+393,Tied Together with a Smile,Taylor Swift,synth-pop,sad,0.547,146,0.238,0.478,0.523
+394,The Story Of Us,Taylor Swift,synth-pop,intense,0.807,140,0.645,0.547,0.00556
+395,Forever & Always,Taylor Swift,synth-pop,intense,0.829,128,0.521,0.607,0.0805
+396,Hey Stephen,Taylor Swift,synth-pop,happy,0.541,116,0.839,0.843,0.191
+397,Speak Now,Taylor Swift,synth-pop,happy,0.603,119,0.714,0.712,0.0991
+398,Wonderland,Taylor Swift,synth-pop,sad,0.692,184,0.197,0.422,0.0493
+399,White Horse,Taylor Swift,synth-pop,sad,0.348,93,0.218,0.578,0.311
+400,I'm Only Me When I'm With You,Taylor Swift,synth-pop,intense,0.933,144,0.521,0.556,0.00454
+401,Starlight,Taylor Swift,synth-pop,intense,0.779,126,0.617,0.649,0.0186
+402,I Know Places,Taylor Swift,synth-pop,intense,0.755,160,0.496,0.603,0.243
+403,Welcome To New York,Taylor Swift,pop,happy,0.634,117,0.658,0.789,0.0348
+404,Blank Space,Taylor Swift,pop,intense,0.703,96,0.57,0.76,0.103
+405,Style,Taylor Swift,pop,intense,0.791,95,0.487,0.588,0.00245
+406,Out Of The Woods,Taylor Swift,pop,sad,0.841,92,0.338,0.553,0.000743
+407,All You Had To Do Was Stay,Taylor Swift,pop,intense,0.725,97,0.539,0.605,0.00201
+408,Shake It Off,Taylor Swift,pop,happy,0.8,160,0.942,0.647,0.0647
+409,I Wish You Would,Taylor Swift,pop,intense,0.893,118,0.513,0.653,0.0158
+410,Bad Blood,Taylor Swift,pop,sad,0.794,170,0.287,0.646,0.0885
+411,Wildest Dreams,Taylor Swift,pop,neutral,0.688,140,0.465,0.55,0.0692
+412,How You Get The Girl,Taylor Swift,pop,neutral,0.656,120,0.545,0.765,0.00364
+413,This Love,Taylor Swift,pop,sad,0.435,144,0.107,0.481,0.678
+414,I Know Places,Taylor Swift,pop,intense,0.755,160,0.495,0.602,0.245
+415,Clean,Taylor Swift,pop,sad,0.377,104,0.211,0.815,0.232
+416,Wonderland,Taylor Swift,pop,sad,0.692,184,0.197,0.422,0.0493
+417,You Are In Love,Taylor Swift,pop,sad,0.48,170,0.319,0.474,0.707
+418,New Romantics,Taylor Swift,pop,intense,0.889,122,0.584,0.633,0.00463
+419,I Know Places - Voice Memo,Taylor Swift,pop,sad,0.128,79,0.15,0.592,0.829
+420,I Wish You Would - Voice Memo,Taylor Swift,pop,chill,0.357,118,0.645,0.781,0.717
+421,Blank Space - Voice Memo,Taylor Swift,pop,chill,0.234,127,0.578,0.675,0.801
+422,Welcome To New York,Taylor Swift,pop,neutral,0.634,117,0.615,0.793,0.038
+423,Blank Space,Taylor Swift,pop,neutral,0.678,96,0.583,0.752,0.085
+424,Style,Taylor Swift,pop,intense,0.786,95,0.456,0.598,0.00256
+425,Out Of The Woods,Taylor Swift,pop,sad,0.841,92,0.342,0.552,0.00103
+426,All You Had To Do Was Stay,Taylor Swift,pop,intense,0.735,97,0.472,0.602,0.00196
+427,Shake It Off,Taylor Swift,pop,happy,0.785,160,0.943,0.648,0.0561
+428,I Wish You Would,Taylor Swift,pop,intense,0.898,118,0.503,0.649,0.016
+429,Bad Blood,Taylor Swift,pop,sad,0.802,170,0.295,0.652,0.0871
+430,Wildest Dreams,Taylor Swift,pop,neutral,0.664,140,0.467,0.553,0.0709
+431,How You Get The Girl,Taylor Swift,pop,neutral,0.659,120,0.525,0.764,0.00463
+432,This Love,Taylor Swift,pop,sad,0.459,72,0.0858,0.485,0.635
+433,I Know Places,Taylor Swift,pop,intense,0.763,160,0.507,0.595,0.231
+434,Clean,Taylor Swift,pop,sad,0.38,104,0.211,0.81,0.242
+435,State Of Grace,Taylor Swift,pop-rock,intense,0.825,130,0.397,0.588,0.000197
+436,Red,Taylor Swift,pop-rock,intense,0.896,125,0.641,0.602,0.0773
+437,Treacherous,Taylor Swift,pop-rock,neutral,0.621,110,0.395,0.704,0.101
+438,I Knew You Were Trouble.,Taylor Swift,pop-rock,happy,0.469,77,0.679,0.622,0.00454
+439,All Too Well,Taylor Swift,pop-rock,sad,0.609,93,0.337,0.602,0.0382
+440,22,Taylor Swift,pop-rock,happy,0.729,104,0.668,0.661,0.00215
+441,I Almost Do,Taylor Swift,pop-rock,sad,0.481,146,0.233,0.567,0.0173
+442,We Are Never Ever Getting Back Together,Taylor Swift,pop-rock,happy,0.676,86,0.75,0.628,0.00957
+443,Stay Stay Stay,Taylor Swift,pop-rock,happy,0.748,100,0.928,0.729,0.307
+444,The Last Time,Taylor Swift,pop-rock,sad,0.443,94,0.123,0.505,0.035
+445,Holy Ground,Taylor Swift,pop-rock,intense,0.816,157,0.648,0.627,0.0162
+446,Sad Beautiful Tragic,Taylor Swift,pop-rock,sad,0.34,130,0.261,0.624,0.632
+447,The Lucky One,Taylor Swift,pop-rock,neutral,0.499,118,0.545,0.706,0.0371
+448,Everything Has Changed,Taylor Swift,pop-rock,neutral,0.458,80,0.436,0.624,0.36
+449,Starlight,Taylor Swift,pop-rock,intense,0.777,126,0.587,0.649,0.0213
+450,Begin Again,Taylor Swift,pop-rock,sad,0.526,79,0.323,0.53,0.199
+451,The Moment I Knew,Taylor Swift,pop-rock,sad,0.506,126,0.274,0.619,0.187
+452,Come Back...Be Here,Taylor Swift,pop-rock,sad,0.548,80,0.217,0.483,0.00471
+453,Girl At Home,Taylor Swift,pop-rock,neutral,0.59,125,0.633,0.733,0.272
+454,Treacherous - Original Demo Recording,Taylor Swift,pop-rock,neutral,0.64,110,0.519,0.828,0.175
+455,Red - Original Demo Recording,Taylor Swift,pop-rock,intense,0.902,125,0.637,0.678,0.113
+456,State Of Grace - Acoustic,Taylor Swift,pop-rock,sad,0.118,106,0.0682,0.626,0.664
+457,State Of Grace,Taylor Swift,pop-rock,intense,0.825,130,0.397,0.588,0.000197
+458,Red,Taylor Swift,pop-rock,intense,0.896,125,0.641,0.602,0.0773
+459,Treacherous,Taylor Swift,pop-rock,neutral,0.621,110,0.395,0.705,0.101
+460,I Knew You Were Trouble.,Taylor Swift,pop-rock,happy,0.469,77,0.679,0.622,0.00454
+461,All Too Well,Taylor Swift,pop-rock,sad,0.609,93,0.337,0.602,0.0382
+462,22,Taylor Swift,pop-rock,happy,0.729,104,0.668,0.658,0.00215
+463,I Almost Do,Taylor Swift,pop-rock,sad,0.481,146,0.233,0.567,0.0173
+464,We Are Never Ever Getting Back Together,Taylor Swift,pop-rock,happy,0.676,86,0.75,0.628,0.00957
+465,Stay Stay Stay,Taylor Swift,pop-rock,happy,0.748,100,0.928,0.729,0.307
+466,The Last Time,Taylor Swift,pop-rock,sad,0.443,94,0.123,0.505,0.035
+467,Holy Ground,Taylor Swift,pop-rock,intense,0.816,157,0.648,0.627,0.0162
+468,Sad Beautiful Tragic,Taylor Swift,pop-rock,sad,0.34,130,0.261,0.624,0.632
+469,The Lucky One,Taylor Swift,pop-rock,neutral,0.499,118,0.545,0.706,0.0371
+470,Everything Has Changed,Taylor Swift,pop-rock,neutral,0.458,80,0.436,0.624,0.36
+471,Starlight,Taylor Swift,pop-rock,intense,0.777,126,0.587,0.649,0.0213
+472,Begin Again,Taylor Swift,pop-rock,sad,0.526,79,0.323,0.53,0.199
+473,Sparks Fly - Live/2011,Taylor Swift,country,sad,0.783,115,0.298,0.455,0.00917
+474,Mine - Live/2011,Taylor Swift,country,intense,0.852,121,0.442,0.496,0.00233
+475,The Story Of Us - Live,Taylor Swift,country,intense,0.908,140,0.472,0.419,0.00048
+476,Mean - Live/2011,Taylor Swift,country,intense,0.915,164,0.432,0.429,0.154
+477,Ours - Live/2011,Taylor Swift,country,sad,0.355,78,0.267,0.421,0.715
+478,Back To December/Apologize/You're Not Sorry - Live/2011/Medley,Taylor Swift,country,sad,0.516,142,0.171,0.374,0.155
+479,Better Than Revenge - Live/2011,Taylor Swift,country,intense,0.887,146,0.386,0.445,0.00306
+480,Speak Now - Live/2011,Taylor Swift,country,neutral,0.694,119,0.373,0.615,0.0636
+481,Last Kiss - Live/2011,Taylor Swift,country,sad,0.395,80,0.188,0.427,0.205
+482,Drops Of Jupiter - Live/2011,Taylor Swift,country,sad,0.504,109,0.27,0.374,0.806
+483,Bette Davis Eyes - Live/2011,Taylor Swift,country,neutral,0.488,104,0.363,0.327,0.713
+484,I Want You Back - Live/2011,Taylor Swift,country,sad,0.512,97,0.249,0.536,0.794
+485,Dear John - Live/2011,Taylor Swift,country,sad,0.386,120,0.138,0.521,0.0157
+486,Enchanted - Live/2011,Taylor Swift,country,sad,0.663,164,0.214,0.34,0.0747
+487,Haunted - Live/2011,Taylor Swift,country,sad,0.818,162,0.177,0.338,0.0245
+488,Long Live - Live/2011,Taylor Swift,country,sad,0.728,102,0.204,0.544,0.0053
+489,Mine - POP Mix,Taylor Swift,country,happy,0.768,121,0.692,0.696,0.00461
+490,Sparks Fly,Taylor Swift,country,intense,0.785,115,0.376,0.608,0.0387
+491,Back To December,Taylor Swift,country,sad,0.606,142,0.296,0.517,0.0202
+492,Speak Now,Taylor Swift,country,happy,0.601,119,0.742,0.708,0.101
+493,Dear John,Taylor Swift,country,sad,0.468,119,0.126,0.583,0.183
+494,Mean,Taylor Swift,country,happy,0.747,164,0.808,0.57,0.445
+495,The Story Of Us,Taylor Swift,country,happy,0.855,140,0.84,0.575,0.000315
+496,Never Grow Up,Taylor Swift,country,chill,0.308,125,0.547,0.715,0.829
+497,Enchanted,Taylor Swift,country,sad,0.618,82,0.228,0.535,0.0716
+498,Better Than Revenge,Taylor Swift,country,happy,0.917,146,0.652,0.519,0.0167
+499,Innocent,Taylor Swift,country,sad,0.604,134,0.186,0.553,0.202
+500,Haunted,Taylor Swift,country,intense,0.944,162,0.361,0.434,0.0769
+501,Last Kiss,Taylor Swift,country,sad,0.329,84,0.208,0.359,0.581
+502,Long Live,Taylor Swift,country,sad,0.682,204,0.146,0.412,0.0426
+503,Mine - POP Mix,Taylor Swift,country,happy,0.768,121,0.692,0.696,0.00461
+504,Sparks Fly,Taylor Swift,country,intense,0.785,115,0.376,0.608,0.0387
+505,Back To December,Taylor Swift,country,sad,0.606,142,0.296,0.517,0.0202
+506,Speak Now,Taylor Swift,country,happy,0.601,119,0.742,0.708,0.101
+507,Dear John,Taylor Swift,country,sad,0.468,119,0.126,0.583,0.183
+508,Mean,Taylor Swift,country,happy,0.747,164,0.808,0.57,0.445
+509,The Story Of Us,Taylor Swift,country,happy,0.855,140,0.84,0.575,0.000315
+510,Never Grow Up,Taylor Swift,country,chill,0.308,125,0.547,0.715,0.829
+511,Enchanted,Taylor Swift,country,sad,0.618,82,0.228,0.535,0.0716
+512,Better Than Revenge,Taylor Swift,country,happy,0.917,146,0.652,0.519,0.0167
+513,Innocent,Taylor Swift,country,sad,0.604,134,0.186,0.553,0.202
+514,Haunted,Taylor Swift,country,intense,0.944,162,0.361,0.434,0.0769
+515,Last Kiss,Taylor Swift,country,sad,0.329,84,0.208,0.359,0.581
+516,Long Live,Taylor Swift,country,sad,0.682,204,0.146,0.412,0.0426
+517,Ours,Taylor Swift,country,sad,0.556,160,0.192,0.61,0.505
+518,If This Was A Movie,Taylor Swift,country,sad,0.724,148,0.257,0.515,0.154
+519,Superman,Taylor Swift,country,intense,0.817,132,0.547,0.582,0.0187
+520,Back To December - Acoustic,Taylor Swift,country,sad,0.451,142,0.333,0.541,0.731
+521,Haunted - Acoustic Version,Taylor Swift,country,sad,0.462,81,0.314,0.574,0.841
+522,Mine,Taylor Swift,country,happy,0.78,121,0.672,0.621,0.00327
+523,Back To December,Taylor Swift,country,sad,0.676,142,0.281,0.525,0.113
+524,The Story Of Us,Taylor Swift,country,intense,0.809,140,0.649,0.546,0.00487
+525,Jump Then Fall,Taylor Swift,country,happy,0.687,80,0.82,0.618,0.111
+526,Untouchable,Taylor Swift,country,sad,0.454,200,0.288,0.419,0.0583
+527,Forever & Always - Piano Version,Taylor Swift,country,sad,0.16,119,0.294,0.592,0.852
+528,Come In With The Rain,Taylor Swift,country,sad,0.461,144,0.23,0.527,0.0961
+529,SuperStar,Taylor Swift,country,sad,0.531,86,0.228,0.61,0.367
+530,The Other Side Of The Door,Taylor Swift,country,intense,0.816,164,0.469,0.476,0.169
+531,Fearless,Taylor Swift,country,intense,0.714,100,0.467,0.598,0.0364
+532,Fifteen,Taylor Swift,country,sad,0.636,95,0.214,0.559,0.0728
+533,Love Story,Taylor Swift,country,sad,0.736,119,0.307,0.618,0.157
+534,Hey Stephen,Taylor Swift,country,happy,0.553,116,0.825,0.843,0.168
+535,White Horse,Taylor Swift,country,sad,0.346,93,0.195,0.585,0.302
+536,You Belong With Me,Taylor Swift,country,intense,0.771,130,0.445,0.687,0.164
+537,Breathe,Taylor Swift,country,sad,0.486,148,0.17,0.498,0.373
+538,Tell Me Why,Taylor Swift,country,intense,0.852,100,0.513,0.601,0.0606
+539,You're Not Sorry,Taylor Swift,country,sad,0.459,134,0.281,0.459,0.13
+540,The Way I Loved You,Taylor Swift,country,intense,0.712,161,0.379,0.436,0.0322
+541,Forever & Always,Taylor Swift,country,intense,0.829,128,0.514,0.605,0.0907
+542,The Best Day,Taylor Swift,country,neutral,0.447,126,0.364,0.664,0.611
+543,Change,Taylor Swift,country,sad,0.756,96,0.224,0.548,0.00471
+544,Fearless,Taylor Swift,country,intense,0.705,100,0.472,0.593,0.0449
+545,Fifteen,Taylor Swift,country,sad,0.648,95,0.207,0.555,0.072
+546,Love Story,Taylor Swift,country,sad,0.639,119,0.34,0.62,0.0186
+547,Hey Stephen,Taylor Swift,country,happy,0.543,116,0.826,0.843,0.174
+548,White Horse,Taylor Swift,country,sad,0.342,93,0.212,0.587,0.298
+549,You Belong With Me,Taylor Swift,country,intense,0.775,130,0.469,0.688,0.151
+550,Breathe,Taylor Swift,country,sad,0.472,148,0.163,0.488,0.389
+551,Tell Me Why,Taylor Swift,country,intense,0.848,100,0.476,0.606,0.0611
+552,You're Not Sorry,Taylor Swift,country,sad,0.458,134,0.309,0.471,0.145
+553,The Way I Loved You,Taylor Swift,country,intense,0.723,161,0.412,0.434,0.0315
+554,Forever & Always,Taylor Swift,country,intense,0.816,128,0.55,0.604,0.0788
+555,The Best Day,Taylor Swift,country,neutral,0.44,126,0.368,0.671,0.648
+556,Change,Taylor Swift,country,sad,0.747,96,0.214,0.545,0.00465
+557,Our Song - International Mix,Taylor Swift,country,happy,0.696,178,0.664,0.516,0.00739
+558,Teardrops On My Guitar - International Mix,Taylor Swift,country,sad,0.557,100,0.152,0.514,0.0178
+559,Should've Said No - International Mix,Taylor Swift,country,intense,0.761,168,0.454,0.398,0.00505
+560,Love Story - Live From Clear Channel Stripped 2008,Taylor Swift,country,neutral,0.444,119,0.512,0.741,0.659
+561,Fearless - Live From Clear Channel Stripped 2008,Taylor Swift,country,chill,0.266,97,0.467,0.623,0.814
+562,Beautiful Eyes - Live From Clear Channel Stripped 2008,Taylor Swift,country,intense,0.704,99,0.457,0.627,0.596
+563,Untouchable - Live From Clear Channel Stripped 2008,Taylor Swift,country,sad,0.184,102,0.331,0.731,0.856
+564,Teardrops On My Guitar - Live From Clear Channel Stripped 2008,Taylor Swift,country,intense,0.801,204,0.615,0.344,0.664
+565,Picture To Burn - Live From Clear Channel Stripped 2008,Taylor Swift,country,happy,0.872,106,0.684,0.647,0.266
+566,Should've Said No - Live From Clear Channel Stripped 2008,Taylor Swift,country,intense,0.808,172,0.438,0.429,0.399
+567,Change - Live From Clear Channel Stripped 2008,Taylor Swift,country,sad,0.712,202,0.273,0.243,0.156
+568,Tim McGraw,Taylor Swift,country,neutral,0.491,76,0.425,0.58,0.575
+569,Picture To Burn,Taylor Swift,country,happy,0.877,106,0.821,0.658,0.173
+570,Teardrops On My Guitar - Radio Single Remix,Taylor Swift,country,sad,0.417,100,0.289,0.621,0.288
+571,A Place in this World,Taylor Swift,country,intense,0.777,115,0.428,0.576,0.051
+572,Cold As You,Taylor Swift,country,sad,0.482,176,0.261,0.418,0.217
+573,The Outside,Taylor Swift,country,intense,0.805,113,0.591,0.589,0.00491
+574,Tied Together with a Smile,Taylor Swift,country,sad,0.578,146,0.192,0.479,0.525
+575,Stay Beautiful,Taylor Swift,country,neutral,0.629,132,0.504,0.594,0.0868
+576,Should've Said No,Taylor Swift,country,intense,0.777,168,0.472,0.476,0.0103
+577,Mary's Song (Oh My My My),Taylor Swift,country,neutral,0.627,75,0.374,0.403,0.0177
+578,Our Song,Taylor Swift,country,neutral,0.672,89,0.539,0.668,0.111
+579,I'm Only Me When I'm With You,Taylor Swift,country,intense,0.934,144,0.518,0.563,0.00452
+580,Invisible,Taylor Swift,country,sad,0.394,96,0.233,0.612,0.637
+581,A Perfectly Good Heart,Taylor Swift,country,sad,0.751,156,0.268,0.483,0.00349
+582,Teardrops on My Guitar - Pop Version,Taylor Swift,country,intense,0.753,200,0.483,0.459,0.0402

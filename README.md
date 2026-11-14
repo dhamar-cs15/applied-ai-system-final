@@ -13,11 +13,19 @@ Your goal is to:
 
 Replace this paragraph with your own summary of what your version does.
 
+<!-- The catalog in `data/songs.csv` is adapted from the [Taylor Swift Spotify Dataset on Kaggle](https://www.kaggle.com/datasets/jarredpriester/taylor-swift-spotify-dataset). The source does not provide genre or mood labels, so genres are assigned by album: Taylor Swift, Fearless, and Speak Now are `country`; Red is `pop-rock`; 1989 and Lover are `pop`; reputation and Midnights are `synth-pop`; folklore and evermore are `folk`; and The Tortured Poets Department is `alt-pop`. Album editions and live variants use their parent album's genre. Mood is derived from Spotify valence and energy: valence ≥ 0.65 is `happy`, valence ≤ 0.35 is `sad`, otherwise energy ≥ 0.70 is `intense`, energy ≤ 0.40 is `chill`, and the remaining tracks are `neutral`. Tempo is rounded to whole BPM. -->
+
+
+This version of the song recommender
+
+
 ---
 
 ## How The System Works
 
 Explain your design in plain language.
+
+System diagram: [Recommendation system architecture](diagrams/recommendation_system.mmd)
 
 Some prompts to answer:
 
@@ -270,6 +278,22 @@ Use this section to document the experiments you ran. For example:
 - How did your system behave for different types of users
 
 I tested what happened when I made energy more important and genre less important. I brought down the genre-match points from 20 to 10 and doubled the maximum energy points from 30 to 60. This made songs with energy close to a user’s target more likely to rank highly, even when their genre didn’t match. Unfortunately, this also created some overlap in profiles. 
+
+---
+
+## Reliability and Evaluation
+
+Run the automated tests with `pytest -q`. The current suite completed with **5 of 5 tests passing**:
+
+| Test | What it checks | Result |
+|---|---|---|
+| `test_load_songs_converts_numeric_fields` | CSV values are converted to the expected numeric types. | Pass |
+| `test_score_song_returns_score_and_reasons` | A known input produces the expected score and explanation details. | Pass |
+| `test_recommend_songs_ranks_top_k_without_mutating_catalog` | Results are ranked and limited to top-k without changing the catalog. | Pass |
+| `test_recommend_returns_songs_sorted_by_score` | The object-based recommender puts the matching song first. | Pass |
+| `test_explain_recommendation_returns_non_empty_string` | A recommendation explanation is returned and is non-empty. | Pass |
+
+These tests cover the existing deterministic recommender. The planned AI preference extractor and grounded response composer in the system diagram are not implemented yet, so this result does **not** evaluate AI-generated output. When those components are added, test them with mocked model responses for valid and invalid preferences, and verify that every recommended song comes from the retrieved catalog results.
 
 ---
 
