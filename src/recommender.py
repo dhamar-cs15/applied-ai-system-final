@@ -1,6 +1,5 @@
 import csv
 from typing import List, Dict, Tuple, Optional
-from dataclasses import dataclass
 
 DEFAULT_WEIGHTS: Dict[str, float] = {
     "genre": 10.0,      # flat bonus for an era/genre match
@@ -13,50 +12,6 @@ DEFAULT_WEIGHTS: Dict[str, float] = {
 # The values the dataset actually uses. The agent's parser must stay inside these.
 VALID_GENRES = {"country", "pop-rock", "pop", "synth-pop", "folk", "alt-pop"}
 VALID_MOODS = {"happy", "sad", "neutral", "intense", "chill"}
-
-@dataclass
-class Song:
-    """
-    Represents a song and its attributes.
-    Required by tests/test_recommender.py
-    """
-    id: int
-    title: str
-    artist: str
-    genre: str
-    mood: str
-    energy: float
-    tempo_bpm: float
-    valence: float
-    danceability: float
-    acousticness: float
-
-@dataclass
-class UserProfile:
-    """
-    Represents a user's taste preferences.
-    Required by tests/test_recommender.py
-    """
-    favorite_genre: str
-    favorite_mood: str
-    target_energy: float
-    likes_acoustic: bool
-
-class Recommender:
-    """
-    OOP implementation of the recommendation logic.
-    Required by tests/test_recommender.py
-    """
-    def __init__(self, songs: List[Song]):
-        self.songs = songs
-
-    def recommend(self, user: UserProfile, k: int = 5) -> List[Song]:
-        # TODO: Implement recommendation logic
-        return self.songs[:k]
-
-    def explain_recommendation(self, user: UserProfile, song: Song) -> str:
-        # TODO: Implement explanation logic
-        return "Explanation placeholder"
 
 def load_songs(csv_path: str) -> List[Dict]:
     """Load songs from a CSV file, converting numeric fields to numbers."""

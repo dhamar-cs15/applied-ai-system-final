@@ -91,6 +91,20 @@ Prompts:
 - Cases where the system overfits to one preference  
 - Ways the scoring might unintentionally favor some users 
 
+python -m src.main "not too acoustic chill folk" --top-k 3
+python -m src.main "sad country" --top-k 5
+
+1. I Think He Knows — Taylor Swift
+   Score: 105.8
+   Reasons: genre mismatch (+0.0), mood match (+30.0), energy similarity (+56.0), acoustic preference (+19.8)
+
+1. Long Live - Live/2011 — Taylor Swift
+   Score: 59.9
+   Reasons: genre match (+10.0), mood match (+30.0), valence similarity (+19.9)
+
+
+Taylor's Version
+
 This system does not consider learning from the user after the initial profile is made for them. The recommender selects songs based on the existing user profile but does not consider that the user's tastes might change over time. The current system also does not consider that the user may have multiple genre preferences at the same time. For example, I enjoy both pop and folk, especially songs that combine the two. The system currently has no way of coonsidering both of these genres simultaneously - if I say I like pop, I'll probably not get folk songs. 
 On the same note, I'd likely not get folk songs in my recommendations because at the moment there's only one in the dataset. Therefore, even if I add "folk" as my chosen genre, the other 4 recommendations after the one folk song will be from some other genre, which I may or may not like. 
 The scoring thus is more linkely to benefit users who have clear-cut preferences that align with the categories in the dataset. If someone likes "psychedelic folk" or "country-pop", the system won't be able to evaluate their preferences correctly. 

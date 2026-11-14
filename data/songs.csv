@@ -20,14 +20,14 @@ id,title,artist,genre,mood,energy,tempo_bpm,valence,danceability,acousticness
 19,The Albatross,Taylor Swift,alt-pop,sad,0.479,172,0.292,0.352,0.655
 20,Chloe or Sam or Sophia or Marcus,Taylor Swift,alt-pop,sad,0.451,70,0.218,0.516,0.78
 21,How Did It End?,Taylor Swift,alt-pop,sad,0.379,84,0.273,0.492,0.785
-22,So High School,Taylor Swift,alt-pop,sad,0.866,176,0.293,0.366,0.0274
+22,So High School,Taylor Swift,alt-pop,happy,0.866,176,0.293,0.366,0.0274
 23,I Hate It Here,Taylor Swift,alt-pop,sad,0.562,106,0.297,0.485,0.717
 24,thanK you aIMee,Taylor Swift,alt-pop,sad,0.541,96,0.252,0.609,0.609
 25,I Look in People's Windows,Taylor Swift,alt-pop,chill,0.274,91,0.385,0.763,0.69
-26,The Prophecy,Taylor Swift,alt-pop,neutral,0.525,168,0.535,0.421,0.825
+26,The Prophecy,Taylor Swift,alt-pop,sad,0.525,168,0.535,0.421,0.825
 27,Cassandra,Taylor Swift,alt-pop,neutral,0.587,140,0.514,0.587,0.806
 28,Peter,Taylor Swift,alt-pop,sad,0.376,177,0.29,0.342,0.805
-29,The Bolter,Taylor Swift,alt-pop,neutral,0.586,184,0.481,0.455,0.638
+29,The Bolter,Taylor Swift,alt-pop,chill,0.586,184,0.481,0.455,0.638
 30,Robin,Taylor Swift,alt-pop,sad,0.386,138,0.158,0.476,0.791
 31,The Manuscript,Taylor Swift,alt-pop,chill,0.256,94,0.436,0.509,0.901
 32,Fortnight (feat. Post Malone),Taylor Swift,alt-pop,sad,0.386,192,0.281,0.504,0.502
@@ -48,7 +48,7 @@ id,title,artist,genre,mood,energy,tempo_bpm,valence,danceability,acousticness
 47,Clara Bow,Taylor Swift,alt-pop,sad,0.318,104,0.214,0.686,0.636
 48,Welcome To New York (Taylor's Version),Taylor Swift,pop,happy,0.602,117,0.685,0.76,0.00661
 49,Blank Space (Taylor's Version),Taylor Swift,pop,happy,0.719,96,0.71,0.732,0.0901
-50,Style (Taylor's Version),Taylor Swift,pop,sad,0.821,95,0.298,0.514,0.000456
+50,Style (Taylor's Version),Taylor Swift,pop,intense,0.821,95,0.298,0.514,0.000456
 51,Out Of The Woods (Taylor's Version),Taylor Swift,pop,sad,0.884,92,0.184,0.544,0.000466
 52,All You Had To Do Was Stay (Taylor's Version),Taylor Swift,pop,intense,0.713,97,0.54,0.589,0.000778
 53,Shake It Off (Taylor's Version),Taylor Swift,pop,happy,0.805,160,0.903,0.632,0.0112
