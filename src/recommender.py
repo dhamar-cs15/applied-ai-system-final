@@ -12,7 +12,7 @@ DEFAULT_WEIGHTS: Dict[str, float] = {
  
 # The values the dataset actually uses. The agent's parser must stay inside these.
 VALID_GENRES = {"country", "pop-rock", "pop", "synth-pop", "folk", "alt-pop"}
-VALID_MOODS = {"sad", "neutral", "intense"}
+VALID_MOODS = {"happy", "sad", "neutral", "intense", "chill"}
 
 @dataclass
 class Song:
@@ -120,7 +120,7 @@ def recommend_songs(user_prefs: Dict, songs: List[Dict], k: int = 5, weights: Op
     """Return the top-k songs ranked by score with explanations."""
     scored_songs = []
     for song in songs:
-        score, reasons = score_song(user_prefs, song)
+        score, reasons = score_song(user_prefs, song, weights=weights)
         explanation = ", ".join(reasons) or "No matching preferences were provided."
         scored_songs.append((song, score, explanation))
 

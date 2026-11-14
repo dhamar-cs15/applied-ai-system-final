@@ -54,28 +54,32 @@ List the specific features your Song and UserProfile objects will use in your si
    python -m venv .venv
    source .venv/bin/activate      # Mac or Linux
    .venv\Scripts\activate         # Windows
+   ```
 
 2. Install dependencies
 
-```bash
-pip install -r requirements.txt
-```
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-3. Run the app:
+3. Run the app with a natural-language request:
 
-```bash
-python -m src.main
-```
+   ```bash
+   python -m src.main "happy energetic pop" --top-k 5
+   ```
+
+   Omit the request to enter one interactively. The CLI uses the offline
+   keyword parser; no model API key or network connection is required.
 
 ### Running Tests
 
-Run the starter tests with:
+Run the automated tests with:
 
 ```bash
-pytest
+pytest -q
 ```
 
-You can add more tests in `tests/test_recommender.py`.
+Agent and recommendation tests are in `tests/`.
 
 ---
 
@@ -283,17 +287,14 @@ I tested what happened when I made energy more important and genre less importan
 
 ## Reliability and Evaluation
 
-Run the automated tests with `pytest -q`. The current suite completed with **5 of 5 tests passing**:
+Run the automated tests with `pytest -q`. The current suite completed with **14 of 14 tests passing**:
 
-| Test | What it checks | Result |
+| Test suite | What it checks | Result |
 |---|---|---|
-| `test_load_songs_converts_numeric_fields` | CSV values are converted to the expected numeric types. | Pass |
-| `test_score_song_returns_score_and_reasons` | A known input produces the expected score and explanation details. | Pass |
-| `test_recommend_songs_ranks_top_k_without_mutating_catalog` | Results are ranked and limited to top-k without changing the catalog. | Pass |
-| `test_recommend_returns_songs_sorted_by_score` | The object-based recommender puts the matching song first. | Pass |
-| `test_explain_recommendation_returns_non_empty_string` | A recommendation explanation is returned and is non-empty. | Pass |
+| `tests/test_recommender.py` | Numeric CSV loading, score/explanation details, top-k ranking without catalog mutation, and the object-based recommender. | 5 passed |
+| `tests/test_agent.py` | Preference parsing and validation, acoustic alignment, weight-adjustment retries, low-information and invalid-input handling, optional-client fallback, and CLI integration/logging. | 9 passed |
 
-These tests cover the existing deterministic recommender. The planned AI preference extractor and grounded response composer in the system diagram are not implemented yet, so this result does **not** evaluate AI-generated output. When those components are added, test them with mocked model responses for valid and invalid preferences, and verify that every recommended song comes from the retrieved catalog results.
+The reported match score is a heuristic average of preference-alignment checks, **not** a calibrated probability that a recommendation is correct. The CLI currently uses deterministic keyword parsing; no Gemini or other model API client is configured. The optional `client.parse_request` interface has a fallback test, but these results do not measure LLM quality or include human-review outcomes.
 
 ---
 

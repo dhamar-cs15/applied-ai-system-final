@@ -1,36 +1,40 @@
 flowchart TD
-    User["User: describes what they want and reviews recommendations"]
-    App["Main application<br/>src/main.py"]
-    Parser["AI preference extractor<br/>planned"]
-    Guardrail["Validate structured preferences<br/>allowed genres/moods; energy 0–1"]
+    User["User: enters a request and reviews results"]
+    App["CLI<br/>src/main.py"]
+    Agent["Agent loop<br/>src/agent.py"]
+    Parser["PLAN: offline keyword parser<br/>optional injected parse_request client"]
+    Guardrail["Validate supported preferences<br/>genres, moods, numeric ranges"]
     Catalog[("Song catalog<br/>data/songs.csv")]
-    Ranker["Retriever and ranker<br/>src/recommender.py"]
-    Candidates["Top-ranked songs<br/>with catalog features"]
-    Composer["Grounded response composer<br/>planned: explain using retrieved songs only"]
-    Result["Recommendations with reasons"]
-    Error["Show validation or AI errors"]
+    Ranker["ACT: retrieve and rank<br/>src/recommender.py"]
+    Evaluator["TEST: evaluate preference alignment<br/>match score and per-check results"]
+    Decision{"Match score meets threshold?"}
+    Retry["REFLECT: increase failing weights<br/>and retry within max_passes"]
+    Human["Human review<br/>when request is unclear or score stays low"]
+    Output["Recommendations, score reasons,<br/>warnings, and trace"]
+    Logs["Application logs<br/>agent trace and review warnings"]
 
     User -->|"Natural-language request"| App
-    App --> Parser
+    App --> Agent
+    Agent --> Parser
     Parser --> Guardrail
-    Guardrail -->|"Valid preferences"| Ranker
-    Guardrail -->|"Invalid preferences"| Error
+    Guardrail --> Ranker
     Catalog --> Ranker
-    Ranker --> Candidates
-    Candidates --> Composer
-    Composer --> Result
-    Result --> User
-    Error --> User
+    Ranker --> Evaluator
+    Evaluator --> Decision
+    Decision -->|"Yes"| Output
+    Decision -->|"No; passes remain"| Retry
+    Retry --> Ranker
+    Decision -->|"No; final pass"| Human
+    Guardrail -->|"No usable preferences"| Human
+    Human --> Output
+    Output --> User
+    Agent -.-> Logs
+    Human -.-> Logs
 
-    subgraph Checks["Testing and User oversight"]
-        Tests["pytest<br/>preference validation, ranking, and grounding checks"]
-        Review["User checks relevance and reports poor recommendations"]
+    subgraph Checks["Automated evaluation"]
+        Tests["pytest<br/>tests/test_agent.py and tests/test_recommender.py"]
     end
 
-    Tests -.->|"automated checks"| Guardrail
-    Tests -.->|"automated checks"| Ranker
-    Tests -.->|"automated checks"| Composer
-    Result -.-> Review
-
-    classDef planned stroke-dasharray: 5 5
-    class Parser,Composer planned
+    Tests -.->|"parser, validation, retries, CLI"| Agent
+    Tests -.->|"ranking and weights"| Ranker
+    Tests -.->|"match-score checks"| Evaluator
