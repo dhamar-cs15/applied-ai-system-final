@@ -76,9 +76,9 @@ Prompts:
 - Any patterns you think your scoring captures correctly  
 - Cases where the recommendations matched your intuition  
 
-The recommender gives reasonable results when a user’s preferences are represented in the catalog. For example, Chill Lofi gets acoustic, lower-energy tracks such as “Library Rain” and “Midnight Coding,” which are sound like very typical lofi songs. Other profiles also seem to match, Deep Intense Rock gets “Storm Runner” at the top which matches well with the user's preferences. 
+The recommender works best when the user’s request uses cues the parser recognizes and the catalog contains tracks with matching attributes. For example, “happy energetic pop” produces preferences for pop, happy mood, high energy, and positive valence; “sad country” produces country, sad mood, and low valence.
 
-I think the system works well when there are songs that closely match two or more categories, especially energy and mood, which are now the heaviest weighted categories after the weight modifications made.
+I think the score reasons make it possible to see which attributes contributed to a recommendation. The evaluation loop also checks the results instead of simply returning a ranked list without qualification.
 
 ---
 
@@ -93,23 +93,28 @@ Prompts:
 - Cases where the system overfits to one preference  
 - Ways the scoring might unintentionally favor some users 
 
+Examples of inaccurate/limited suggestions:
+```bash
 python -m src.main "not too acoustic chill folk" --top-k 3
-python -m src.main "sad country" --top-k 5
-
+```
+```
 1. I Think He Knows — Taylor Swift
    Score: 105.8
    Reasons: genre mismatch (+0.0), mood match (+30.0), energy similarity (+56.0), acoustic preference (+19.8)
+```
 
+```bash 
+python -m src.main "sad country" --top-k 5
+```
+```
 1. Long Live - Live/2011 — Taylor Swift
    Score: 59.9
    Reasons: genre match (+10.0), mood match (+30.0), valence similarity (+19.9)
+```
 
+The system only recommends from a Taylor Swift catalogue, so it cannot serve listeners seeking other artists or music outside its supported categories. Its keyword parser can also miss context, handle mixed preferences poorly, or assign a fixed mood even when a request is more nuanced. For example, a user can prefer several genres at once, but the current profile supports only one genre due to the need to use one for scoring decisions. Another example is how the agent might interpret a mood such as "sad," which can mean different things -- one of the prompts above demonstrate this, where the user asked for "sad country" and was recommended the song "Long Live", which depending on the context, can be associated with different moods that are usually not aligned with sadness. 
 
-Taylor's Version
-
-This system does not consider learning from the user after the initial profile is made for them. The recommender selects songs based on the existing user profile but does not consider that the user's tastes might change over time. The current system also does not consider that the user may have multiple genre preferences at the same time. For example, I enjoy both pop and folk, especially songs that combine the two. The system currently has no way of coonsidering both of these genres simultaneously - if I say I like pop, I'll probably not get folk songs. 
-On the same note, I'd likely not get folk songs in my recommendations because at the moment there's only one in the dataset. Therefore, even if I add "folk" as my chosen genre, the other 4 recommendations after the one folk song will be from some other genre, which I may or may not like. 
-The scoring thus is more linkely to benefit users who have clear-cut preferences that align with the categories in the dataset. If someone likes "psychedelic folk" or "country-pop", the system won't be able to evaluate their preferences correctly. 
+The scoring relies on audio attributes and category labels, not lyrics or a listener’s personal interpretation of a song. Energy and valence are imperfect proxies for how a song feels, and the high energy weight can outweigh other preferences. Catalogue imbalances and repeated tracks can also make some recommendations more likely to appear than others. This was seen in one of my output examples detailed in the README, where a single song (Out of the Woods) was recommended 5 times in a playlist of 10 songs, due to the different versions that exist of it. 
 
 
 ---
@@ -125,9 +130,11 @@ Prompts:
 - What surprised you  
 - Any simple tests or comparisons you ran  
 
-I ran three profiles: High-Energy Pop, Chill Lofi, and Deep Intense Rock. I looked at the songs matched the preferences and whether overlapping results made sense. For example, there seemed to be quite some overlap between High-Energy Pop and Deep Intense Rock, primarily because of their similar energy levels (0.9 and 0.95). This makes sense and tells me that the recommender is giving a lot of importance to energy levels.
+I checked the system with natural-language requests, including “happy energetic pop,” “sad country,” a request with conflicting mood cues, and a request with no recognizable preferences. I also ran the automated test suite and all 12 tests passed.
 
-I also tried conflicting preferences, unknown genre or mood labels, and an empty profile. Unknown labels didn't earn match points but somehow the recommender still outputted recommended songs. This is because we don't have any fall back behavior for the system for these scenarios yet.
+One observation was that the system can flag contradictory cues and still report a high preference-match score. the score measures alignment with the preferences the parser extracted but it does not prove that the parser interpreted the original request correctly. I also saw repeated tracks in some top-k results several times, which shows that ranking rows does not necessarily produce a playlist of distinct songs.
+
+One thing I tested from the original Module 3 assignment was contradictory moods such as "sad but upbeat", which the original program was not able to figure out. This updated program was able to interpret this request much better, recommending songs that were classified as sad in terms of their lyrics or theme, but energetic/upbeat sonically. 
 
 ---
 
@@ -143,8 +150,9 @@ Prompts:
 - Handling more complex user tastes  
 
 
-I could add more songs, especially in underrepresented genres and moods, so the system has better options for more listeners. I could also let users choose multiple genres or set different importance levels for their preferences to address some of the weaknesses I mentioned in the first few sections. Also based on teh overlap between the High-Energy Pop and Deep Intense Rock profiles, I could add a diversity feature so the top results don’t repeatedly favor songs with similar qualities. 
-These implementations would allow the program to return a more personalized playlist to the user.
+I would first decide whether to clean the data to remove duplicated songs so that they're not suggested multiple times in a single recommendation. This would involve investigating which versions are in the catalogue, since Taylor Swift has often done remixes that change the mood/characteristics of the song, or emphasized a certain emotion more in her newer Taylor's Version tracks. I would also add better support for mixed or multiple preferences, more diverse tracks and categories, and a way to tune the relative importance of preferences. A stronger evaluation could include human ratings of recommendation usefulness rather than relying only on attribute alignment, which would allow the system to learn more about what is working and what is not. This would be helpful for the duplicates issue, especially to determine whether it makes a difference if the system recommends one version of the song over another. 
+
+
 
 ---
 
@@ -159,7 +167,13 @@ Prompts:
 - How this changed the way you think about music recommendation apps  
 
 
-I learned that recommender systems are a lot more complicated and data-driven than they may seem. I hadn't really thought much about the weight aspect specifically and I wonder how recommender systems in Spotify and Youtube choose WHICH factors to weigh more and if it depends on the type of content. For example, for pop songs, should energy be more important than valence? How are lyrics taken into account? I think I may have ended up with more questions from this project because I hadn't really considered how much went on under the hood of the systems. 
+I learned that recommender systems are a lot more complicated and data-driven than they may seem. At the same time, this final project taught me more about how important context is, especially when attempting to understand what the user is asking for. For example, a user might want songs that are "nostalgic" but what does being nostalgic really mean? The songs could be either happy or sad, and there's not a standard set of attributes that could accurtely capture what nostalgic music is. The original program didn't allow much flexibility for nuance; this updated version does allow for more nuance from the user's inputs but in doing so it has to tackle the dilemma of figuring out what that nuance actually means. 
 
-I was surprised that some songs appeared for both High-Energy Pop and Deep Intense Rock, but it was easy to see that while the songs may have not been the same genre, they matched closely in energy levels, which allowed them to be represented on different profiles. 
+Something I thought was interesting is that sometimes the agent can recommend songs seemingly confidently but still give warnings about conflicts. This is interesting because it makes me wonder to what extent would an agent present information it has reservations about and continue forward with its task. 
+
+
+## 10. AI Reflection
+I used Co-Pilot as an AI assistant to help me review the project from Module 3 again and understand its design and where it could be improved upon by an agent. I accepted its suggestions to make guardrail behavior transparent so that the user could see in the commandline the reasoning for the ranking given and if there were any warnings issued. I thought this was helpful becuase it provided an opportunity for human review. 
+
+The AI also pointed out that there were multiple repeated recommendations in some of the outputs -- I decided to leave the code and dataset unchanged in this case and treated those duplicates as a limitation instead. I thought that to remove the duplicates, it would involve an expansion in scope and creating a rubric for how to deal with songs that had different versions that expressed different moods. Thus, I decided to leave the duplicates as they were for this project version.
 

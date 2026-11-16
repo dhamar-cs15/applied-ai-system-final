@@ -12,15 +12,11 @@ This final project is based on Module 3's project, which implemented a simple so
 
 System diagram: [Recommendation system architecture](diagrams/recommendation_system.mmd)
 
-The CLI passes the request to the agent in `src/agent.py`. The agent extracts
-available preferences, ranks songs using genre, mood, energy, valence, and
-acousticness in `src/recommender.py`, then checks how well the results match
-those preferences. It logs its trace and requests human review if it cannot
-understand the request or the results remain a poor match. The current parser
-is rule-based; no model API is configured.
+This system first takes in a user input through the command-line, which describes what the user's music preferences are. For example, an input such as "happy energetic pop" gets broken down by the systejms keyword parser into the categories happy (mood), energetic (energy level), and pop (genre). Using these characterstics, the system compares the keywords with each song's information in the catalogue, determining how closely it matches. 
+The system gives points to each song based on how well it matches to the user's preferences. It then ranks the songs based on those calculated scores and presents them to the user, depending on the number of songs the user asked for. 
 
+Before returning the list, the system checks whether the recommendations match the preferences it identified -- this ensures that the recommendations are as accurate as possible. If a match is very weak, the agent can adjust the importance of the preferences and try again. For example, if not enough matches were found for "happy folk with acousticness", the system might retry for songs that align more with "folk acousticness" rather than trying to meet all of the criteria equally. When the agent is unsure or experimenting with the results it puts out, it makes sure to present warnings to the user. This is important because it flags anything that the user should review and be aware of before taking the result with 100% confidence. 
 
-[NEED_EXPLANATION]
 
 ---
 
@@ -239,5 +235,6 @@ Write 1 to 2 paragraphs here about what you learned:
 - about how recommenders turn data into predictions
 - about where bias or unfairness could show up in systems like this
 
-
+This project demonstrated that recommenders are much more complicated than they might seem. Even if a user is looking for something as simple as "sad songs," a program must be able to evaluate what different characteristics can represent sad songs -- such as energy levels, mood, valence. This was interesting to work with because sometimes there are sad songs that have high energy or happy songs that have low energy - in cases like these, the program must be able to decide which charateristics to prioritize and weigh more. 
+I think in systems like these, the agent might depend too much on the score that it calculates for the song, which is very dependent on what the weights are. For example, I chose to weigh mood and energy more than other characteristics, but for a different user, they might want their recommendations to align more in terms of genre or valence. Therefore, the weight-based scoring might ignore that there are infinite ways to score a song based on focusing on different areas.
 
