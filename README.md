@@ -1,16 +1,14 @@
-# 🎵 Music Recommender Simulation
+# 🎵 Feeling Swift - A Taylor Swift Song Recommender
 
 ## Project Summary
 
-This project recommends Taylor Swift songs from a natural-language request. An
-offline keyword parser extracts preferences, a weighted ranker scores the song
-catalog, and an evaluation loop retries with adjusted weights or flags results
-for human review. The catalog is adapted from the
-[Taylor Swift Spotify Dataset on Kaggle](https://www.kaggle.com/datasets/jarredpriester/taylor-swift-spotify-dataset).
+This project recommends Taylor Swift songs from a natural-language request. A keyword parser extracts preferences, a weighted ranker scores the song catalog, and an evaluation loop retries with adjusted weights or flags results for human review. The recommender evaluates various user preferences in regards to song characteristics, such as genre, mood, and energy to suggest the best-fitted tracks. The catalog is adapted from the Taylor Swift Spotify Dataset on Kaggle, which includes 582 tracks (https://www.kaggle.com/datasets/jarredpriester/taylor-swift-spotify-dataset).
+
+This final project is based on Module 3's project, which implemented a simple song recommender based on a catalog of 18 songs and 3 pre-determined user profiles. The original project did not incorporate an agentic workflow and was not flexible in its user input. This updated project allows a user to express how they are feeling and what type of music they'd like to listen to, as well as how many song recommendations they would like to receive. This allows the user to receive a personalized playlist that best fits their preferences. 
 
 ---
 
-## How The System Works
+## Architecture: How The System Works
 
 System diagram: [Recommendation system architecture](diagrams/recommendation_system.mmd)
 
@@ -20,6 +18,9 @@ acousticness in `src/recommender.py`, then checks how well the results match
 those preferences. It logs its trace and requests human review if it cannot
 understand the request or the results remain a poor match. The current parser
 is rule-based; no model API is configured.
+
+
+[NEED_EXPLANATION]
 
 ---
 
@@ -70,24 +71,147 @@ Run a real request with:
 python -m src.main "happy energetic pop" --top-k 1
 ```
 
-The CLI prints the parsed preferences, match score, selected track, score
-reasons, and whether the agent accepted the result or requested human review.
+```
+INFO: REFLECT: match score 1.0 ≥ 0.6 — accepting results.
+
+Request: happy energetic pop
+Preferences: {'genre': 'pop', 'mood': 'happy', 'energy': 0.85, 'valence': 0.75}
+Preference match score: 1.00 (checks: {'genre': 1.0, 'mood': 1.0, 'energy': 1.0, 'valence': 1.0})
+
+1. New Romantics (Taylor's Version) — Taylor Swift
+   Score: 119.4
+   Reasons: genre match (+10.0), mood match (+30.0), energy similarity (+59.9), valence similarity (+19.5)
+
+Recommendations accepted.
+```
+
+``` bash
+python -m src.main "sad country" --top-k 5
+```
+
+```
+INFO: PLAN: request = 'sad country'
+INFO: PLAN: heuristic parser produced {'genre': 'country', 'mood': 'sad', 'valence': 0.2}
+INFO: ACT  (pass 1): ranked 582 songs with weights {'genre': 10.0, 'mood': 30.0, 'energy': 60.0, 'valence': 20.0, 'acoustic': 20.0}
+INFO: TEST (pass 1): match_score=1.0 checks={'genre': 1.0, 'mood': 1.0, 'valence': 1.0}
+INFO: REFLECT: match score 1.0 ≥ 0.6 — accepting results.
+
+Request: sad country
+Preferences: {'genre': 'country', 'mood': 'sad', 'valence': 0.2}
+Preference match score: 1.00 (checks: {'genre': 1.0, 'mood': 1.0, 'valence': 1.0})
+
+1. Long Live - Live/2011 — Taylor Swift
+   Score: 59.9
+   Reasons: genre match (+10.0), mood match (+30.0), valence similarity (+19.9)
+
+2. White Horse — Taylor Swift
+   Score: 59.9
+   Reasons: genre match (+10.0), mood match (+30.0), valence similarity (+19.9)
+
+3. Fifteen — Taylor Swift
+   Score: 59.9
+   Reasons: genre match (+10.0), mood match (+30.0), valence similarity (+19.9)
+
+4. Last Kiss - Live/2011 — Taylor Swift
+   Score: 59.8
+   Reasons: genre match (+10.0), mood match (+30.0), valence similarity (+19.8)
+
+5. Last Kiss — Taylor Swift
+   Score: 59.8
+   Reasons: genre match (+10.0), mood match (+30.0), valence similarity (+19.8)
+
+Recommendations accepted.
+```
+
+
+```bash
+python -m src.main "really sad but slightly upbeat" --top-k 10                 
+```
+
+```
+INFO: PLAN: request = 'really sad but slightly upbeat'
+INFO: PLAN: conflicting cues found (happy vs sad); will proceed but flag it.
+INFO: PLAN: heuristic parser produced {'mood': 'sad', 'energy': 0.85, 'valence': 0.2}
+INFO: ACT  (pass 1): ranked 582 songs with weights {'genre': 10.0, 'mood': 30.0, 'energy': 60.0, 'valence': 20.0, 'acoustic': 20.0}
+INFO: TEST (pass 1): match_score=1.0 checks={'mood': 1.0, 'energy': 1.0, 'valence': 1.0}
+INFO: REFLECT: match score 1.0 ≥ 0.6 — accepting results.
+
+Request: really sad but slightly upbeat
+Preferences: {'mood': 'sad', 'energy': 0.85, 'valence': 0.2}
+Preference match score: 1.00 (checks: {'mood': 1.0, 'energy': 1.0, 'valence': 1.0})
+Warnings: happy vs sad
+
+1. Electric Touch (feat. Fall Out Boy) (Taylor’s Version) (From The Vault) — Taylor Swift
+   Score: 108.6
+   Reasons: mood match (+30.0), energy similarity (+59.8), valence similarity (+18.8)
+
+2. Out Of The Woods (Taylor's Version) — Taylor Swift
+   Score: 107.7
+   Reasons: mood match (+30.0), energy similarity (+58.0), valence similarity (+19.7)
+
+3. Out Of The Woods (Taylor's Version) — Taylor Swift
+   Score: 107.7
+   Reasons: mood match (+30.0), energy similarity (+58.0), valence similarity (+19.7)
+
+4. Haunted - Live/2011 — Taylor Swift
+   Score: 107.6
+   Reasons: mood match (+30.0), energy similarity (+58.1), valence similarity (+19.5)
+
+5. Out Of The Woods — Taylor Swift
+   Score: 106.7
+   Reasons: mood match (+30.0), energy similarity (+59.5), valence similarity (+17.2)
+
+6. Out Of The Woods — Taylor Swift
+   Score: 106.7
+   Reasons: mood match (+30.0), energy similarity (+59.5), valence similarity (+17.2)
+
+7. Out Of The Woods — Taylor Swift
+   Score: 106.7
+   Reasons: mood match (+30.0), energy similarity (+59.5), valence similarity (+17.2)
+
+8. Style (Taylor's Version) — Taylor Swift
+   Score: 106.3
+   Reasons: mood match (+30.0), energy similarity (+58.3), valence similarity (+18.0)
+
+9. Bad Blood — Taylor Swift
+   Score: 105.2
+   Reasons: mood match (+30.0), energy similarity (+57.1), valence similarity (+18.1)
+
+10. Hits Different — Taylor Swift
+   Score: 105.0
+   Reasons: mood match (+30.0), energy similarity (+56.2), valence similarity (+18.8)
+
+Recommendations accepted.
+```
+
+```bash 
+python -m src.main "anything you want to recommend me" --top-k 5 
+```
+```
+INFO: PLAN: request = 'anything you want to recommend me'
+INFO: PLAN: heuristic parser produced {}
+INFO: PLAN: could not extract any preference — stopping instead of recommending blindly.
+
+Request: anything you want to recommend me
+Preferences: none identified
+Preference match score: 0.00 (checks: {})
+WARNING: I couldn't tell what you're in the mood for. Try naming an album, a mood, or an energy level.
+```
 
 ---
 
-## Experiments You Tried
+## Design Decisions
+For this project, I decidied to go with a Taylor Swift catalogue - she is known for having a music catalogue that spans from country to pop to folk and alternative. Her diversity makes it ideal for a project like this where mood and genre factors used to put together a playlist based on the user's preferences. This was also a decision made for the human review aspect, since I'm very familiar with Swift's music and would be able to verify if the agent was accurately recommending songs when give prompts such as "sad but slightly upbeat."
 
-Use this section to document the experiments you ran. For example:
+One tradeoff is that while Swift's catalogue is diverse, using only her discography provides a limited variety of genres and moods. There are many genres she has not covered and moods that aren't the primary ones represented in her songs. 
 
-- What happened when you changed the weight on genre from 2.0 to 0.5
-- What happened when you added tempo or valence to the score
-- How did your system behave for different types of users
+Another decision made was to have the program go based off known words like "sad," "pop," or "acoustic" so that it would be able to accurately map requests to the songs' characteristics. The program is able to understand words like "melancholy" which aren't directly associated with any song, and still produce accurate recommendations, such as sad songs in this case. However, the program doesn't understand other non-standard ways of describing a mood, such as "feeling a bit down." Therefore, there are some design choices such as this one that were made for simplicity and so that the agent would be able to understand synonyms related to the songs' characteristics in order to provide an accurate playlist, rather than return irrelevant results in an attempt to figure out what "feeling a bit down" meant.
 
-I tested what happened when I made energy more important and genre less important. I brought down the genre-match points from 20 to 10 and doubled the maximum energy points from 30 to 60. This made songs with energy close to a user’s target more likely to rank highly, even when their genre didn’t match. Unfortunately, this also created some overlap in profiles. 
+This design decision also led to the implementation of guardrails and human review. Rather than continue with irrelevant results, the agent makes sure that it understands the request clearly. It evaluates what the request could mean and explains why it is matching it to songs that meet a particular criteria. If it is not able to find songs that match accurately, it displays that transparently to the user, with CLI messages such as "INFO: PLAN: could not extract any preference — stopping instead of recommending blindly."
 
 ---
 
-## Reliability and Evaluation
+## Testing Summary
 
 Run the automated tests with `python -m pytest -q`. The current suite completed with **12 of 12 tests passing**:
 
@@ -96,25 +220,11 @@ Run the automated tests with `python -m pytest -q`. The current suite completed 
 | `tests/test_recommender.py` | Numeric CSV loading, score/explanation details, and top-k ranking without catalog mutation. | 3 passed |
 | `tests/test_agent.py` | Preference parsing and validation, acoustic alignment, weight-adjustment retries, low-information and invalid-input handling, optional-client fallback, and CLI integration/logging. | 9 passed |
 
-The reported match score is a heuristic average of preference-alignment checks, **not** a calibrated probability that a recommendation is correct. The CLI currently uses deterministic keyword parsing; no Gemini or other model API client is configured. The optional `client.parse_request` interface has a fallback test, but these results do not measure LLM quality or include human-review outcomes.
+This agent is efficient at recommending songs for a variety of moods and genres. It uses the scoring rubric in order to rank songs that match closely to these two particular factors. Based on my own knowledge of Taylor Swift's songs, I would say that the program is accurate most of the time in its recommendations. 
 
----
+Through multiple rounds of testing, I kept seeing that the agent would recommend the same song multiple times in the same response. This was for a few reasons: the first is that the dataset included duplicates for each time that Swift has released a track on a "new" record. This would include each time that she has released songs on both a standard version and deluxe version. Particularly in the case of Taylor Swift, she released rerecordings of 4 of her previous albums as "Taylor's Version"s -- therefore all of these songs will have their original released tracks and their newer rerecorded ones. This can be confusing for a user that does not know much about Swift's catalogue. In a more optimized edition, the agent would be ale to differentiate between these repeated tracks and evaluate which to recommend. 
 
-## Limitations and Risks
-
-Summarize some limitations of your recommender.
-
-Examples:
-
-- It only works on a tiny catalog
-- It does not understand lyrics or language
-- It might over favor one genre or mood
-
-You will go deeper on this in your model card.
-
-
-There are many limitations with this recommender. For example, it doesn't have a vast variety of songs, just a limited dataset. A major limitation I can think of is that sometimes the song's energy doesn't match the mood. For example, angry rock songs can be high in energy but the recommender might think that this energy level matches the profile of a user who likes "happy pop." I can think of songwriters who will also write songs that sound upbeat and happy but are actually sad or distressing. 
-Another limitation is that the user's profile right now is static. The user is described very one-dimensionally, such as "happy pop." But people's moods shift throughout the day and across periods of time; the recommender at the moment does not adjust the user's profile based on what they have actually been feeling and listening to lately. 
+I also learned that the agent does not understand very nuanced expressions or anything that is too vague. For example, "sad but happy" returns a list of songs that I would personally agree are sad, but in no way happy. The agent understands that this is a conflict, noting: "INFO: PLAN: conflicting cues found (happy vs sad); will proceed but flag it." Yet, it proceeds to make a recommendation that is inaccurate. The program is not able to separate what the user would consider to be sad in a song versus happy. 
 
 ---
 

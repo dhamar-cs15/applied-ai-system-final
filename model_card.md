@@ -5,7 +5,7 @@
 Give your model a short, descriptive name.  
 Example: **VibeFinder 1.0**
 
-**Music to my Mood**
+**Feeling Swift - A Taylor Swift Song Recommender**
 
 
 ---
@@ -21,9 +21,12 @@ Prompts:
 - Is this for real users or classroom exploration  
 
 
-This recommender is designed to create a short playlist of songs that match your mood. Based on the user's music taste preferences, this simulator determines which songs the user is most likely to enjoy at the moment. The recommender will take the user's preferred genre, mood, energy level, and favorability towards acousticness -- using these factors, it calculates how similar a song is to the user preference levels of the factors. If the song's attributes align well with the user's taste, it recommends that song to the user. 
+This recommender is designed to create a short playlist of songs that match a user's mood. Based on the user's music taste preferences, this simulator determines which songs the user is most likely to enjoy at the moment. The recommender will take the user's preferred genre, mood, energy level, and favorability towards acousticness -- using these factors, it calculates how similar a song is to the user preference levels of the factors. If the song's attributes align well with the user's taste, it recommends that song to the user.
 
-Right now, this recommender is for classroom exploration only. The current program does not take actual user data or user interactions to create a list of recommendations. It only has 18 songs in its catalog and the user preferences are predetermined based on a few factors only. 
+The music catablogue used in the project is based off Taylor Swift's discography, which ranges across ranges from country to pop to indie folk. The catalogue features various moods such as sad, happy, neutral, intense, chill, and more. 
+
+Right now, this recommender is for classroom exploration only. The program implements an agent that considers the user's description of what type of music they would like to listen to. The agent is limited in which kind of statements it can interpret but it is able to understand those with synonyms to the keywords in the catalogue, allowing it to be flexible enough to interact with users. 
+
 ---
 
 ## 3. How the Model Works  
@@ -39,9 +42,9 @@ Prompts:
 
 Avoid code here. Pretend you are explaining the idea to a friend who does not program.
 
-There are only a few main features that are currently used from a song in order to determine its score. The current model takes in a song's genre, energy, mood, and acousticness data, though each song has additional attributes (id, title, artist, genre, mood, energy, tempo_bpm, valence, danceability, acousticness). 
-The model identifies the user's preferences for genre, energy, mood, and acousticness and compares them with each song. It then adds points to make a score. An exact genre match adds 10 points, while an exact mood match adds 30. Energy can add up to 60 points: the closer a song's energy is to the user's target, the more points it earns. Acousticness can add up to 20 points depending on whether the user likes acoustic music. For example, a user who prefers energy 0.85 gets a stronger energy match from a song at 0.75 than from one at 0.20.
+The system will first look for known keywords in the request and maps them to a small set of preferences. Based on its closeness to a song's characteristics, it then scores each song -- giving most weight to the similarity in energy, mood, and genre to the user's preferences. Once each song has received its score, it is sorted in a ranking (best matched songs first). 
 
+Afyter ranking, the agent checks whether the results align with the extracted preferences. If the user's request is unclear or the songs don't really align with it, the agent flags the result for human review, explaining its reasoning for the warning. This makes sure that the agent is transparent about what it can and cannot produce. The score that it gives each song is simply an indication of preferene alignment but can't guarantee that the user will actually agree with the recommended songs or enjoy them.
 
 ---
 
@@ -56,11 +59,10 @@ Prompts:
 - Did you add or remove data  
 - Are there parts of musical taste missing in the dataset  
 
-There are 18 songs in the catalog. There are 15 genres: pop, lofi, rock, ambient, jazz, synthwave, indie pop, country, reggae, classical, metal, funk, house, folk, and blues. There are 14 moods: happy, chill, intense, moody, focused, nostalgic, playful, serene, defiant, confident, euphoric, wistful, melancholic, and relaxed.
+The final catalog contains 582 rows and is adapted from the Taylor Swift Spotify dataset on Kaggle. The earlier Module 3 version used 18 songs and three predetermined user profiles; this version lets users enter requests directly -- providing for a more flexible and personalized experience for the user.
 
-I added 8 songs to the original dataset of 10 songs. This was the only new data added for the catalog.
+The current system supports various genres, including country, pop-rock, pop, synth-pop, folk, and alt-pop, and the moods happy, sad, neutral, intense, and chill. The data includes numeric audio attributes such as energy, valence, tempo, danceability, and acousticness, although not all of them affect the current score. The catalog is limited to one artist, Taylor Swift, and repeated track titles or versions can appear, so 582 rows doesn't necessarily mean 582 distinct songs. One arist's catalogue might be diverse but it will inevitably leave out a variety of genres and moods that the user might be looking for but not find fulfilled within this catalogue of music used. 
 
-I think many of the moods and genres listed could virtually be considered "missing" because they only appear once. If they only appear once, the user won't be getting many recommendations with that kind of song, which is a flaw in the recommender. I also doesn't consider whether the user wants to hear songs that might sound one way sonically, but their meaning in lyrics is the complete opposite. 
 
 ---
 
